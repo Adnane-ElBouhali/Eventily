@@ -12,6 +12,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta http-equiv="Content-Language" content="en" />
 
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.7.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.7.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.7.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
     <link rel="icon" type="image/png"
         href="https://cdn.evbstatic.com/s3-build/445891-rc2022-04-21_16.04-3424bc6/django/images/favicons/favicon-32x32.png"
         sizes="32x32">
@@ -276,7 +294,7 @@ documented in ticket EB-85484-->
 
     <!-- Begin Anti-flicker Snippet (Optimize) -->
 
-<!--
+    <!--
     <style type="text/css">
         .async-hide {
             opacity: 0 !important
@@ -570,19 +588,18 @@ documented in ticket EB-85484-->
                                                         </g>
                                                     </g>
                                                 </g>
-                                            </svg> 
+                                            </svg>
                                             <span class="eds-is-hidden-accessible">Eventily</span></i></a>
-                      
+
                                     <div class="consumer-header__search" data-spec="consumer-header-search">
-                                        <button
-                                            data-testid="consumer-global-header-search"
+                                        <button data-testid="consumer-global-header-search"
                                             class="eds-btn--button eds-btn--none eds-btn--block consumer-header__search--button"
                                             type="button">
                                             <div class="eds-field-styled eds-field-styled--disabled eds-field-styled--basic"
                                                 style="margin-bottom:8px" data-automation="input-field-wrapper"
                                                 data-testid="input-field-wrapper" data-spec="input-field">
                                                 <div class="eds-field-styled__border-simulation">
-                                                
+
                                                     <!--
                                                     <div class="eds-field-styled__internal"><span
                                                             class="eds-field-styled__aside eds-field-styled__aside-prefix eds-field-styled__aside--icon"><i
@@ -616,7 +633,8 @@ documented in ticket EB-85484-->
                                                     </div> -->
                                                 </div>
                                             </div>
-                                        </button></div>
+                                        </button>
+                                    </div>
                                     <div class="consumer-header__links">
                                         <!--
                                         <div class="consumer-header__menus" data-spec="consumer-header-menus">
@@ -661,8 +679,8 @@ documented in ticket EB-85484-->
                                         </div> 
                                     -->
                                         <div class="consumer-header__quick-links eds-l-mar-left-2"
-                                            data-testid="consumer-header-quick-links"><a
-                                                href="../log_in/index.html" target="_self"
+                                            data-testid="consumer-header-quick-links"><a href="../log_in/index.html"
+                                                target="_self"
                                                 class="consumer-header__quick-link"><span></span><span>Log
                                                     In</span></a><a href="../sign_up/index.html"
                                                 class="consumer-header__quick-link"><span></span><span>Sign
@@ -676,8 +694,8 @@ documented in ticket EB-85484-->
                                             data-spec="consumer-header-logo-link"><i
                                                 class="eds-vector-image eds-brand--small eds-vector-image--ui-orange eds-vector-image--block eds-vector-image-size--reset"
                                                 title="Eventy" data-spec="icon" data-testid="icon"
-                                                style="height:20px;width:110px"> 
-                                                
+                                                style="height:20px;width:110px">
+
                                                 <svg viewBox="0 0 200 36">
                                                     <g fill-rule="evenodd">
                                                         <g>
@@ -707,7 +725,7 @@ documented in ticket EB-85484-->
                                                         </g>
                                                     </g>
                                                 </svg>
-                                                
+
                                                 <!--<svg viewBox="0 0 200 36">
                                                     <g fill-rule="evenodd">
                                                         <g>
@@ -769,9 +787,10 @@ documented in ticket EB-85484-->
 
                                                         </g>
                                                     </g>
-                                                </svg> --><span class="eds-is-hidden-accessible">Eventily</span></i></a>
+                                                </svg> --><span class="eds-is-hidden-accessible">Eventily</span>
+                                            </i></a>
                                         <div class="eds-align--center-vertical">
-                                     <!--       <div class="consumer-header__mobile-search-button"><span
+                                            <!--       <div class="consumer-header__mobile-search-button"><span
                                                     class="eds-icon-button eds-icon-button--neutral"
                                                     data-spec="icon-button">
                                                     <button
@@ -788,7 +807,8 @@ documented in ticket EB-85484-->
                                                                 </path>
                                                             </svg><span class="eds-is-hidden-accessible">Search
                                                                 button</span></i></button></span></div> -->
-                                            <div class="consumer-header__links"><!--<span
+                                            <div class="consumer-header__links">
+                                                <!--<span
                                                     class="eds-global-header__narrow-menu eds-show-down-mn">
                                                     <div class="consumer-header__menu"><a
                                                             class="eds-dropdown-menu__link ignore-react-onclickoutside"
@@ -909,22 +929,24 @@ documented in ticket EB-85484-->
                                                                     </g>
                                                                 </svg>
                                                                 <p class="eds-is-hidden-accessible">Now is your time</p>
-                                                                <div id="a16" class="feed-fullbleed-header__cta-container"><a
+                                                                <div id="a16"
+                                                                    class="feed-fullbleed-header__cta-container"><a
                                                                         data-spec="seasonal-cta" aria-label="" href="/d"
                                                                         class="eds-link">
                                                                         <div
                                                                             class="feed-fullbleed-header__cta-text eds-text-bm eds-text-weight--heavy">
                                                                             Find your next event</div>
-                                                                        
+
                                                                     </a></div>
 
-                                                                <div id="a15" class="feed-fullbleed-header__cta-container"><a
+                                                                <div id="a15"
+                                                                    class="feed-fullbleed-header__cta-container"><a
                                                                         data-spec="seasonal-cta" aria-label="" href="/d"
                                                                         class="eds-link">
                                                                         <div
                                                                             class="feed-fullbleed-header__cta-text eds-text-bm eds-text-weight--heavy">
                                                                             Find your next group</div>
-                                                                        
+
                                                                     </a></div>
                                                             </h1>
                                                         </div>
@@ -2418,6 +2440,44 @@ documented in ticket EB-85484-->
 
     <script>window.EB = window.EB || {}; EB.VHit = [];</script>
 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loadEl = document.querySelector('#load');
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.firestore().doc('/foo/bar').get().then(() => { });
+            // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            // firebase.analytics(); // call to activate
+            // firebase.analytics().logEvent('tutorial_completed');
+            // firebase.performance(); // call to activate
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
+        });
+    </script>
 </body>
 
 </html>
