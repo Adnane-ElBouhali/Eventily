@@ -20,3 +20,28 @@ onAuthStateChanged(auth, user => {
     }
 });
 
+
+const signUpForm = document.querySelector(".signUP");
+
+
+signUpForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const firstName = signUpForm.firstName.value;
+    const lastName = signUpForm.lastName.value;
+    //const email = emailInput.email.value;
+    //const password = passwordInput.password.value;
+
+    //const emailInput = signUpForm.
+    const passwordInput = document.getElementById('password1');
+
+    createUserWithEmailAndPassword(auth, emailInput, passwordInput)
+    .then((cred) => {
+        console.log('user created : ', cred.user)
+        signUpForm.reset();
+    })
+    .catch((err) => {
+        console.log(err.message)
+    })
+
+})

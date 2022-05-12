@@ -571,8 +571,81 @@
                                                                 data-testid="go-to-login" href="/signin/"
                                                                 class="eds-link">Log in</a></div>
                                                     </div>
-                                                    <form action="#" data-testid="form-lookup">
-                                                        <div class="eds-l-mar-bot-6 auth-lib__email-input-field">
+                                                    <form action="#" data-testid="form-lookup" class="signUP">
+                                                        <div class="eds-l-mar-bot-2 auth-lib__firstName-input-field">
+                                                            <div class="eds-field-styled eds-field-styled--static"
+                                                                style="margin-bottom:8px"
+                                                                data-automation="input-field-wrapper"
+                                                                data-testid="auth-lib-firstName-field-wrapper"
+                                                                data-spec="input-field">
+                                                                <div class="eds-field-styled__border-simulation">
+                                                                    <div class="eds-field-styled__internal">
+                                                                        <div class="eds-field-styled__input-container">
+                                                                            <div
+                                                                                class="eds-field-styled__label-wrapper">
+                                                                                <label
+                                                                                    class="eds-field-styled__label eds-label-primary"
+                                                                                    id="firstName-label" for="firstName"
+                                                                                    data-spec="label-label"><span
+                                                                                        class="eds-label__content">First Name</span></label></div>
+                                                                            <input type="firstName" name="firstName"
+                                                                                data-spec="input-field-input-element"
+                                                                                class="eds-field-styled__input"
+                                                                                data-testid="auth-lib-FirstName-field"
+                                                                                id="firstName" value=""
+                                                                                role="textbox" autoComplete="off" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="auth-lib__firstName-input-field--domain-suggestions display-hidden">
+                                                                <div tabindex="-1">
+                                                                    <ul data-spec="text-list" class="eds-text-list"
+                                                                        role="menu"></ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="eds-l-mar-bot-2 auth-lib__lastName-input-field">
+                                                            <div class="eds-field-styled eds-field-styled--static"
+                                                                style="margin-bottom:8px"
+                                                                data-automation="input-field-wrapper"
+                                                                data-testid="auth-lib-lastName-field-wrapper"
+                                                                data-spec="input-field">
+                                                                <div class="eds-field-styled__border-simulation">
+                                                                    <div class="eds-field-styled__internal">
+                                                                        <div class="eds-field-styled__input-container">
+                                                                            <div
+                                                                                class="eds-field-styled__label-wrapper">
+                                                                                <label
+                                                                                    class="eds-field-styled__label eds-label-primary"
+                                                                                    id="lastName-label" for="lastName"
+                                                                                    data-spec="label-label"><span
+                                                                                        class="eds-label__content">Last Name</span></label></div>
+                                                                            <input type="lastName"
+                                                                                data-spec="input-field-input-element"
+                                                                                class="eds-field-styled__input"
+                                                                                data-testid="auth-lib-lastName-field"
+                                                                                id="lastName" name="lastName" value=""
+                                                                                role="textbox" autoComplete="off" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="auth-lib__lastName-input-field--domain-suggestions display-hidden">
+                                                                <div tabindex="-1">
+                                                                    <ul data-spec="text-list" class="eds-text-list"
+                                                                        role="menu"></ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="eds-l-mar-bot-2 auth-lib__email-input-field">
                                                             <div class="eds-field-styled eds-field-styled--static"
                                                                 style="margin-bottom:8px"
                                                                 data-automation="input-field-wrapper"
@@ -582,7 +655,7 @@
                                                                     <div class="eds-field-styled__internal">
                                                                         <div class="eds-field-styled__input-container">
                                                                             <div
-                                                                                class="eds-field-styled__label-wrapper">
+                                                                                class="eds-field-styled__label-wrapper" >
                                                                                 <label
                                                                                     class="eds-field-styled__label eds-label-primary"
                                                                                     id="email-label" for="email"
@@ -593,7 +666,7 @@
                                                                                 data-spec="input-field-input-element"
                                                                                 class="eds-field-styled__input"
                                                                                 data-testid="auth-lib-email-field"
-                                                                                id="email" name="email" value=""
+                                                                                id="email1" name="email" value=""
                                                                                 role="textbox" autoComplete="off" />
                                                                         </div>
                                                                     </div>
@@ -607,11 +680,82 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
+
+                                                        <div class="eds-l-mar-bot-2 auth-lib__password-input-field">
+                                                            <div class="eds-field-styled eds-field-styled--static"
+                                                                style="margin-bottom:8px"
+                                                                data-automation="input-field-wrapper"
+                                                                data-testid="auth-lib-password-field-wrapper"
+                                                                data-spec="input-field">
+                                                                <div class="eds-field-styled__border-simulation">
+                                                                    <div class="eds-field-styled__internal">
+                                                                        <div class="eds-field-styled__input-container">
+                                                                            <div
+                                                                                class="eds-field-styled__label-wrapper" >
+                                                                                <label
+                                                                                    class="eds-field-styled__label eds-label-primary"
+                                                                                    id="password-label" for="password"
+                                                                                    data-spec="label-label"><span
+                                                                                        class="eds-label__content">Password</span></label></div>
+                                                                            <input type="password"
+                                                                                data-spec="input-field-input-element"
+                                                                                class="eds-field-styled__input"
+                                                                                data-testid="auth-lib-password-field"
+                                                                                id="password1" name="password" value=""
+                                                                                role="textbox" autoComplete="off" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="auth-lib__password-input-field--domain-suggestions display-hidden">
+                                                                <div tabindex="-1">
+                                                                    <ul data-spec="text-list" class="eds-text-list"
+                                                                        role="menu"></ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="eds-l-mar-bot-2 auth-lib__passwordConfirmation-input-field">
+                                                            <div class="eds-field-styled eds-field-styled--static"
+                                                                style="margin-bottom:8px"
+                                                                data-automation="input-field-wrapper"
+                                                                data-testid="auth-lib-passwordConfirmation-field-wrapper"
+                                                                data-spec="input-field">
+                                                                <div class="eds-field-styled__border-simulation">
+                                                                    <div class="eds-field-styled__internal">
+                                                                        <div class="eds-field-styled__input-container">
+                                                                            <div
+                                                                                class="eds-field-styled__label-wrapper">
+                                                                                <label
+                                                                                    class="eds-field-styled__label eds-label-primary"
+                                                                                    id="passwordConfirmation-label" for="passwordConfirmation"
+                                                                                    data-spec="label-label"><span
+                                                                                        class="eds-label__content">Confirm Password</span></label></div>
+                                                                            <input type="passwordConfirmation"
+                                                                                data-spec="input-field-input-element"
+                                                                                class="eds-field-styled__input"
+                                                                                data-testid="auth-lib-passwordConfirmation-field"
+                                                                                id="passwordConfirmation" name="passwordConfirmation" value=""
+                                                                                role="textbox" autoComplete="off" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        </div>
+
+
+
                                                         <div class="eds-l-pad-bot-10">
                                                             <div class=""><button data-testid="form-submit-button"
                                                                     class="eds-btn eds-btn--submit eds-btn--fill eds-btn--block"
-                                                                    type="submit">Continue</button></div>
+                                                                    type="submit">Sign up</button></div>
                                                         </div>
+
+
                                                     </form>
                                                     <div class="auth-lib__form-divider  eds-l-pad-bot-6">
                                                         <div
@@ -1407,6 +1551,7 @@
 
 
     <script src="script.js"></script>
+    <script type="module" src="/bundle.js"></script>
 
 </body>
 
