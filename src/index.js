@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const app = initializeApp({
     apiKey: "AIzaSyBXZzoJSwm_WNFIuMwBfSxPAV0p-JJL3jk",
@@ -19,3 +19,4 @@ onAuthStateChanged(auth, user => {
         console.log('No user');
     }
 });
+
