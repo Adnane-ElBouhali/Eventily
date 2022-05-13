@@ -28,7 +28,7 @@
       initialize the SDK after all desired features are loaded, set useEmulator to false
       to avoid connecting the SDK to running emulators.
     -->
-    
+
 
     <link rel="icon" type="image/png"
         href="https://cdn.evbstatic.com/s3-build/445891-rc2022-04-21_16.04-3424bc6/django/images/favicons/favicon-32x32.png"
@@ -519,6 +519,9 @@ documented in ticket EB-85484-->
             style="display:none;visibility:hidden"></iframe>
     </noscript>
 
+    <button type='click' id="D1">
+        Log out
+    </button>
 
     <!--
     <div class="eds-g-grid eds-l-mar-top-2 eds-l-mar-bot-2 eds-hide" id="unsupported-browser-alert">
@@ -2440,25 +2443,10 @@ documented in ticket EB-85484-->
 
     <script>window.EB = window.EB || {}; EB.VHit = [];</script>
 -->
-    <script>
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyDTWtvWEVuGjWEL-Af9_KdllekBEvSJ7xU",
-            authDomain: "eventily-471c6.firebaseapp.com",
-            projectId: "eventily-471c6",
-            storageBucket: "eventily-471c6.appspot.com",
-            messagingSenderId: "701201150943",
-            appId: "1:701201150943:web:f7c5e28635f07b2eb20a6a"
-        };
+    <script type="module" src="/bundle.js"></script>
+    <script type="module" src="script.js"></script>
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-    </script>
 </body>
 
 </html>

@@ -571,7 +571,7 @@
                                                                 data-testid="go-to-login" href="/signin/"
                                                                 class="eds-link">Log in</a></div>
                                                     </div>
-                                                    <form action="#" data-testid="form-lookup" class="signUP">
+                                                    <form class="signUP">
                                                         <div class="eds-l-mar-bot-2 auth-lib__firstName-input-field">
                                                             <div class="eds-field-styled eds-field-styled--static"
                                                                 style="margin-bottom:8px"
@@ -662,11 +662,10 @@
                                                                                     data-spec="label-label"><span
                                                                                         class="eds-label__content">Email
                                                                                         address</span></label></div>
-                                                                            <input type="email"
-                                                                                data-spec="input-field-input-element"
+                                                                            <input 
                                                                                 class="eds-field-styled__input"
-                                                                                data-testid="auth-lib-email-field"
-                                                                                id="email1" name="email" value=""
+                                                                                type="text"
+                                                                                name="C4" value=""
                                                                                 role="textbox" autoComplete="off" />
                                                                         </div>
                                                                     </div>
@@ -698,11 +697,11 @@
                                                                                     id="password-label" for="password"
                                                                                     data-spec="label-label"><span
                                                                                         class="eds-label__content">Password</span></label></div>
-                                                                            <input type="password"
-                                                                                data-spec="input-field-input-element"
+                                                                            <input 
+                                                                               
                                                                                 class="eds-field-styled__input"
-                                                                                data-testid="auth-lib-password-field"
-                                                                                id="password1" name="password" value=""
+                                                                              
+                                                                                name="C5" value=""
                                                                                 role="textbox" autoComplete="off" />
                                                                         </div>
                                                                     </div>
@@ -750,9 +749,9 @@
 
 
                                                         <div class="eds-l-pad-bot-10">
-                                                            <div class=""><button data-testid="form-submit-button"
-                                                                    class="eds-btn eds-btn--submit eds-btn--fill eds-btn--block"
-                                                                    type="submit">Sign up</button></div>
+                                                            <div class=""><button  type="click" id="C9"
+                                                                    class="eds-btn eds-btn--fill eds-btn--block"
+                                                                    >Sign up</button></div>
                                                         </div>
 
 
@@ -1550,8 +1549,9 @@
 
 
 
-    <script src="script.js"></script>
+    
     <script type="module" src="/bundle.js"></script>
+    <script type="module" src="script.js"></script>
 
 </body>
 
