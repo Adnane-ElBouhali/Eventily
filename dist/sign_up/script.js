@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebase
 import { auth } from '../index.js';
 
 const btn = document.getElementById("C9");
+//const signUpForm = document.getElementsByClassName("signUP");
 
 btn.addEventListener('click', (e)=> {
     e.preventDefault();
@@ -15,7 +16,6 @@ btn.addEventListener('click', (e)=> {
     createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
         console.log('user created : ', cred.user)
-        signUpForm.reset();
     })
     .catch((err) => {
         console.log(err.message)
