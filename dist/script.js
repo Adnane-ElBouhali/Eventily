@@ -7,7 +7,7 @@ LogOutBtn.addEventListener('click', () => {
     console.log("hey1")
     signOut(auth)
         .then(() => {
-            console.log("The user is fsigned out");
+            console.log("The user is signed out");
         })
         .catch((err) => {
             console.log(err.message)
