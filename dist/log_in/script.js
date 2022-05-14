@@ -12,9 +12,11 @@ logInBtn.addEventListener('click', (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
     .then((cred) => {
-        console.log("User logged in : ",cred.user)
+        //console.log("User logged in : ",cred.user)
+        window.location = "../index.html";
     })
     .catch((err) => {
         console.log(err.message)
     })
 })
+

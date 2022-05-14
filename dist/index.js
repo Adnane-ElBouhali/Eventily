@@ -17,11 +17,14 @@ export const auth = getAuth();
 
 
 onAuthStateChanged(auth, user => {
-    if(user !=null) {
+    /*if(user !=null) {
         console.log('logged in!');
     } else {
         console.log('No user');
-    }
+    }*/
+
+    console.log("user status changed : ", user)
+
 });
 
 

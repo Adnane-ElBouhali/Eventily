@@ -6,7 +6,7 @@ const LogOutBtn = document.getElementById("D1");
 LogOutBtn.addEventListener('click', () => {
     signOut(auth)
         .then(() => {
-            console.log("The user is signed out");
+            //console.log("The user is signed out");
         })
         .catch((err) => {
             console.log(err.message)

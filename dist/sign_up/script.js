@@ -15,7 +15,8 @@ btn.addEventListener('click', (e)=> {
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((cred) => {
-        console.log('user created : ', cred.user)
+        //console.log('user created : ', cred.user)
+        window.location = "../index.html";
     })
     .catch((err) => {
         console.log(err.message)
