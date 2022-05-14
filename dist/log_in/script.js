@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9
 import { auth } from '../index.js';
 
 
-const logInBtn = document.querySelector("#C1");
+const logInBtn = document.getElementById("C1");
 
 logInBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -12,7 +12,7 @@ logInBtn.addEventListener('click', (e) => {
 
     signInWithEmailAndPassword(auth, email, password)
     .then((cred) => {
-        console.log("User logged in : ", user.cred)
+        console.log("User logged in : ",cred.user)
     })
     .catch((err) => {
         console.log(err.message)
