@@ -4,7 +4,6 @@ import { auth } from "./index.js";
 const LogOutBtn = document.getElementById("D1");
 
 LogOutBtn.addEventListener('click', () => {
-    console.log("hey1")
     signOut(auth)
         .then(() => {
             console.log("The user is signed out");
@@ -12,5 +11,4 @@ LogOutBtn.addEventListener('click', () => {
         .catch((err) => {
             console.log(err.message)
         })
-    console.log("hey2")
 })
