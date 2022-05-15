@@ -16198,3 +16198,9 @@ body {
     margin: 1px;
     padding: 1px;
 }
+
+
+
+.feed-events-bucket__content .feed__card-cell, .feed-events-bucket__content .feed__card-cell:nth-child(2n), .feed-events-bucket__content .feed__card-cell:nth-child(odd) {
+    padding: 16px;
+}
