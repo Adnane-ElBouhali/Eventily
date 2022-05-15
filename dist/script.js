@@ -13,15 +13,23 @@ LogOutBtn.addEventListener('click', () => {
         })
 })
 
-onAuthStateChanged(auth, user => {
-    if(user !=null) {
+    onAuthStateChanged(auth, user => {
+        if(user !=null) {
+            document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;
+            const email = user.email;
+            console.log(email);
+
+            document.getElementById("user-email").innerHTML = email;
         
-    } else {
-        
-        document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;
-    }
+        } else {
+            
+            document.getElementById("global-header").innerHTML = document.getElementById("header-before-login").innerHTML;
+        }
+    });
+    
 
 
-});
+
+
 
 

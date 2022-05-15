@@ -15,7 +15,6 @@ const app = initializeApp({
 export const auth = getAuth();
 
 
-
 onAuthStateChanged(auth, user => {
     /*if(user !=null) {
         console.log('logged in!');
