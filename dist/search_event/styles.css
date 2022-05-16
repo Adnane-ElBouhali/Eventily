@@ -16797,15 +16797,15 @@ body {
 .events {
   margin: 4;
   font: medium;
-  color: green;
-  border-bottom: 4px green;
-  text-size-adjust: 20;
+  color: #f05537;
+  border-bottom: 10px #f05537;
+  text-size-adjust: 30;
 }
 .groups {
   margin: 4;
   font: medium;
   color: gray;
-  text-size-adjust: 20;
+  text-size-adjust: 30;
 }
 .both {
   padding: 4;
