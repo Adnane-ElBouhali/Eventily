@@ -1,35 +1,27 @@
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 import { auth } from "./index.js";
 
-const LogOutBtn = document.getElementById("D1");
 
-LogOutBtn.addEventListener('click', () => {
-    signOut(auth)
-        .then(() => {
-            //console.log("The user is signed out");
+onAuthStateChanged(auth, user => {
+    if (user != null) {
+        document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;
+        const email = user.email;
+        document.getElementById("user-email").innerHTML = email;
+
+        const LogOutBtn = document.querySelector("#P1");
+
+        LogOutBtn.addEventListener('click', () => {
+
+            signOut(auth)
+                .then(() => {
+                    //console.log("The user is signed out");
+                })
+                .catch((err) => {
+                    console.log(err.message)
+                })
         })
-        .catch((err) => {
-            console.log(err.message)
-        })
+    } else {
+        document.getElementById("global-header").innerHTML = document.getElementById("header-before-login").innerHTML;
+    }
 })
-
-    onAuthStateChanged(auth, user => {
-        if(user !=null) {
-            document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;
-            const email = user.email;
-            console.log(email);
-
-            document.getElementById("user-email").innerHTML = email;
-        
-        } else {
-            
-            document.getElementById("global-header").innerHTML = document.getElementById("header-before-login").innerHTML;
-        }
-    });
-    
-
-
-
-
-
 

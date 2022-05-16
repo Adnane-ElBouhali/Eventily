@@ -12329,6 +12329,7 @@ body {
 
 .TooltipNotificationDialog .eds-icon--small {
     position: absolute;
+
     top: -7px;
     right: -7px;
     width: 14px;
@@ -16174,7 +16175,7 @@ body {
 
 .banner__header {
     font-weight: 700;
-    margin-bottom: 8px
+    margin-bottom: 8pxF
 }
 
 @media (max-width:960px) {
@@ -16203,4 +16204,17 @@ body {
 
 .feed-events-bucket__content .feed__card-cell, .feed-events-bucket__content .feed__card-cell:nth-child(2n), .feed-events-bucket__content .feed__card-cell:nth-child(odd) {
     padding: 16px;
+}
+
+
+#hadik_li_ghatban {
+    display: none;
+}
+
+#hadik_li_ghadi_t7et_3liha_mouse:hover + #hadik_li_ghatban {
+    display: block;
+}
+
+#hadik_li_ghatban:hover {
+    display: block;
 }
