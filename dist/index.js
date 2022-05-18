@@ -2,7 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
 
 
-const app = initializeApp({
+export const app = initializeApp({
     apiKey: "AIzaSyBXZzoJSwm_WNFIuMwBfSxPAV0p-JJL3jk",
     authDomain: "eventilyy.firebaseapp.com",
     projectId: "eventilyy",

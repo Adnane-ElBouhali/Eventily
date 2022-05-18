@@ -1,7 +1,8 @@
-import { getDatabase, set, ref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js'
+import { getDatabase, set, ref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js';
 import { app } from '../index.js';
+import { getStorage, ref as sref, uploadBytes } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
 
-var event_id = 0;
+var event_id = event_id + 0;
 const database = getDatabase(app);
 const addBtn = document.getElementById("E1");
 const saveBtn = document.querySelector("#E2");
@@ -33,10 +34,39 @@ saveBtn.addEventListener('click', (e) => {
       }).then(() => {
         // Data saved successfully!
         alert('data submitted');
+        event_id++;
       })
       .catch((error) => {
         // The write failed...
         alert(error);
       });
-    event_id++;
 })
+var ImgName, ImgUrl;
+var files = [];
+var reader = new FileReader();
+
+document.getElementById("select").onclick = function(e){
+  var input = document.createElement('input');
+  input.type='file';
+
+  input.onchange = e => {
+    files = e.target.files;
+    reader = new FileReader();
+    reader.onload = function(){
+      document.getElementById("myimg").src = reader.result;
+    }
+    reader.readAsDataURL(files[0]);
+  }
+  input.click();
+}
+
+document.getElementById('upload').onclick = function(){
+  ImgName = document.getElementById('namebox').value;
+  var name = "Images/"+ImgName+".png";
+  const storage = getStorage(app);
+  uploadBytes(sref(storage, name), files[0]).then((snapshot) => {
+  console.log('Uploaded a file!');
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  document.getElementById('UpProgress').innerHTML = 'Upload'+progress+'%'
+  })
+};
