@@ -1,6 +1,7 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js';
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js';
-
+import { getDatabase } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js';
+import { getStorage } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
 
 export const app = initializeApp({
     apiKey: "AIzaSyBXZzoJSwm_WNFIuMwBfSxPAV0p-JJL3jk",
@@ -11,8 +12,9 @@ export const app = initializeApp({
     appId: "1:409686331672:web:59d66d47a574aad0c98e6d",
   });
 
-
+export const storage = getStorage(app);
 export const auth = getAuth();
+export const database = getDatabase(app);
 
 
 onAuthStateChanged(auth, user => {
@@ -57,5 +59,3 @@ btn.addEventListener('submit', (e) => {
 
 })
 */
-
-

@@ -2,6 +2,7 @@ import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 import { auth } from "./index.js";
 
 
+
 onAuthStateChanged(auth, user => {
     if (user != null) {
         document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;

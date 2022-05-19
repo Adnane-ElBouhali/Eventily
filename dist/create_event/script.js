@@ -1,14 +1,24 @@
 
-import { getDatabase, set, ref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js';
-import { app } from '../index.js';
-import { getStorage, ref as sref, uploadBytes } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
 
-var event_id = event_id + 0;
-export const database = getDatabase(app);
+import { storage, database, auth } from '../index.js';
+import { ref as sref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
+import {  ref, set } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js';
+
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+var eventID=uuid();
 
 
-/*
 const saveBtn = document.querySelector("#E2");
+
+var ImgUrl, Name;
+var files = [];
+var reader = new FileReader();
 
 saveBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -22,8 +32,14 @@ saveBtn.addEventListener('click', (e) => {
     const event_end_time = document.getElementsByClassName("eds-field-styled__input")[8].value;
     const event_visibility = document.getElementsByClassName("eds-field-styled__input")[9].value;
     const event_price = document.getElementsByClassName("eds-field-styled__input")[10].value;
+    const u = auth.currentUser;
 
-    set(ref(database, 'events/' + event_id), {
+    getDownloadURL(sref(storage, Name))
+    .then((url) => {
+      console.log('hey1')
+      ImgUrl = url;
+      console.log(ImgUrl)
+      set(ref(database,u.uid + '/events-created/' + eventID), {
         title: event_title,
         domain: event_domain,
         description: event_description,
@@ -33,20 +49,26 @@ saveBtn.addEventListener('click', (e) => {
         end_date: event_end_date,
         end_time: event_end_time,
         visibility: event_visibility,
-        price: event_price
+        price: event_price,
+        image: ImgUrl
       }).then(() => {
         // Data saved successfully!
-        alert('data submitted');
-        event_id++;
+        console.log('hey1')
+        window.location = "../index.html";
       })
       .catch((error) => {
         // The write failed...
         alert(error);
       });
+
+    })
+    .catch((error) => {
+      // Handle any erro
+      console.log(error.message)
+    });
+
+    
 })
-var ImgName, ImgUrl;
-var files = [];
-var reader = new FileReader();
 
 document.getElementById("select").onclick = function(e){
   var input = document.createElement('input');
@@ -54,7 +76,6 @@ document.getElementById("select").onclick = function(e){
 
   input.onchange = e => {
     files = e.target.files;
-    reader = new FileReader();
     reader.onload = function(){
       document.getElementById("myimg").src = reader.result;
     }
@@ -64,14 +85,9 @@ document.getElementById("select").onclick = function(e){
 }
 
 document.getElementById('upload').onclick = function(){
-  ImgName = document.getElementById('namebox').value;
-  var name = "Images/"+ImgName+".png";
-  const storage = getStorage(app);
-  uploadBytes(sref(storage, name), files[0]).then((snapshot) => {
+  Name = "Images/"+eventID+".png";
+  uploadBytes(sref(storage, Name), files[0]).then((snapshot) => {
   console.log('Uploaded a file!');
-  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-  document.getElementById('UpProgress').innerHTML = 'Upload'+progress+'%'
-  })
+  });
 };
 
-*/
