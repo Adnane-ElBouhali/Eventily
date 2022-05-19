@@ -1,10 +1,13 @@
+
 import { getDatabase, set, ref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js';
 import { app } from '../index.js';
 import { getStorage, ref as sref, uploadBytes } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
 
 var event_id = event_id + 0;
-const database = getDatabase(app);
-const addBtn = document.getElementById("E1");
+export const database = getDatabase(app);
+
+
+/*
 const saveBtn = document.querySelector("#E2");
 
 saveBtn.addEventListener('click', (e) => {
@@ -70,3 +73,5 @@ document.getElementById('upload').onclick = function(){
   document.getElementById('UpProgress').innerHTML = 'Upload'+progress+'%'
   })
 };
+
+*/
