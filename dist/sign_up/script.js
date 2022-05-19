@@ -43,7 +43,7 @@ const btn = document.getElementById("C9");
         .then((cred) => {
             const u = auth.currentUser.uid;
             
-            set(ref(database, u+'/'), {
+            set(ref(database, u +'/'), {
                 first_name: firstName,
                 last_name: lastName,
                 email: email
