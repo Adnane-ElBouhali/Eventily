@@ -1,14 +1,854 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" lang="en-us" translate="no">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        Eventily - Create a new event
+    </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Language" content="en">
+
+
+    <link rel="icon" type="image/png"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/favicon-32x32.png"
+        sizes="32x32">
+    <link rel="icon" type="image/png"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/favicon-194x194.png"
+        sizes="194x194">
+    <link rel="icon" type="image/png"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/favicon-96x96.png"
+        sizes="96x96">
+    <link rel="icon" type="image/png"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/android-chrome-192x192.png"
+        sizes="192x192">
+    <link rel="icon" type="image/png"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/favicon-16x16.png"
+        sizes="16x16">
+    <link rel="shortcut icon"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/favicon.ico">
+
+    <link rel="mask-icon"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/safari-pinned-tab.svg"
+        color="#f6682f">
+    <meta name="apple-mobile-web-app-title" content="Eventbrite">
+    <meta name="application-name" content="Eventbrite">
+    <meta name="msapplication-TileColor" content="#f6682f">
+    <meta name="msapplication-TileImage"
+        content="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#f6682f">
+
+
+    <link rel="apple-touch-icon"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/touch_icons/apple-touch-icon-180x180.png">
+
+
+
+    <link rel="manifest"
+        href="https://cdn.evbstatic.com/s3-build/474372-rc2022-05-12_16.04-8109ed1/django/images/favicons/manifest.webmanifest">
+
+
+    <meta name="y_key" content="d92e23811007b438">
+    <meta name="msvalidate.01" content="A9AB07B7E430E4608E0BC57AFA5004AA">
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
-<body>
+<body class="has-no-richtexteditor-custom-styles vsc-initialized">
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P8FXJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+
+
+
+
+    <div id="creator-nav-root">
+        <div class="navigation-header hide-global-header__quick-links hide-minor-section-as-creator"
+            data-spec="creator-header">
+            <header id="global-header" class="eds-global-header" data-spec="global-header" aria-label=""><a
+                    class="eds-global-header__skip-links eds-is-hidden-accessible" href="#skip-heading">Skip Main
+                    Navigation</a>
+                <div class="eds-global-header__main" data-role="header">
+                    <div class="eds-global-header__major" data-spec="global-header-major"><a href="../index.html"
+                            class="eds-global-header__logo-link" data-spec="global-header-logo-link"><i
+                                class="eds-vector-image eds-brand--small eds-vector-image--ui-orange eds-vector-image--block eds-vector-image-size--reset"
+                                title="Eventily" data-spec="icon" data-testid="icon" style="height:20px;width:99px"><svg
+                                    id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="104.85436893203884"
+                                    viewBox="0, 0, 400,104.85436893203884">
+                                    <g id="svgg">
+                                        <path id="path0"
+                                            d="M248.544 15.534 C 248.544 21.942,246.796 27.184,244.660 27.184 C 242.524 27.184,240.777 29.806,240.777 33.010 C 240.777 36.214,242.524 38.835,244.660 38.835 C 246.796 38.835,248.544 48.447,248.544 60.194 C 248.544 78.964,249.485 81.553,256.311 81.553 C 263.136 81.553,264.078 78.964,264.078 60.194 C 264.078 43.797,265.431 38.835,269.903 38.835 C 273.107 38.835,275.728 36.214,275.728 33.010 C 275.728 29.806,273.107 27.184,269.903 27.184 C 266.019 27.184,264.078 23.301,264.078 15.534 C 264.078 6.472,262.352 3.883,256.311 3.883 C 250.270 3.883,248.544 6.472,248.544 15.534 M287.379 9.424 C 287.379 13.026,290.699 15.534,295.469 15.534 C 304.934 15.534,303.596 6.459,293.853 4.570 C 290.021 3.826,287.379 5.808,287.379 9.424 M318.447 44.660 C 318.447 74.865,319.503 81.553,324.272 81.553 C 329.041 81.553,330.097 74.865,330.097 44.660 C 330.097 14.455,329.041 7.767,324.272 7.767 C 319.503 7.767,318.447 14.455,318.447 44.660 M21.080 27.330 C 2.473 34.213,-3.635 59.042,9.663 73.736 C 18.270 83.247,43.282 84.407,50.563 75.634 C 57.517 67.256,52.302 63.945,40.571 69.290 C 32.944 72.765,28.638 72.735,22.108 69.161 C 13.356 64.371,31.204 55.557,51.456 54.667 C 60.278 54.280,60.278 41.791,51.456 34.159 C 42.527 26.434,30.693 23.773,21.080 27.330 M136.275 27.784 C 115.716 35.455,110.181 58.725,125.493 73.109 C 136.339 83.299,156.022 84.200,165.291 74.931 C 173.324 66.898,167.005 63.660,155.408 69.866 C 146.912 74.413,132.039 71.894,132.039 65.907 C 132.039 63.998,139.466 60.534,148.544 58.210 C 178.205 50.618,178.685 50.155,169.463 38.017 C 162.075 28.293,147.201 23.707,136.275 27.784 M208.201 26.103 C 206.955 27.350,200.667 28.220,194.229 28.037 L 182.524 27.704 182.524 54.629 C 182.524 75.973,183.732 81.553,188.350 81.553 C 192.651 81.553,194.175 77.053,194.175 64.355 C 194.175 43.553,202.458 32.876,213.862 38.979 C 219.724 42.116,221.359 47.197,221.359 62.273 C 221.359 76.822,222.789 81.553,227.184 81.553 C 234.708 81.553,235.566 37.880,228.155 32.146 C 220.990 26.602,210.791 23.513,208.201 26.103 M69.736 53.398 C 84.982 89.224,91.873 89.679,105.849 55.781 C 111.736 41.503,115.743 29.012,114.754 28.023 C 110.094 23.362,101.294 31.959,97.009 45.359 C 89.733 68.115,86.845 68.381,79.727 46.951 C 74.939 32.535,71.189 27.184,65.871 27.184 C 59.121 27.184,59.407 29.127,69.736 53.398 M287.379 54.369 C 287.379 78.964,288.118 81.553,295.146 81.553 C 302.173 81.553,302.913 78.964,302.913 54.369 C 302.913 29.773,302.173 27.184,295.146 27.184 C 288.118 27.184,287.379 29.773,287.379 54.369 M352.198 56.680 C 361.443 84.176,361.750 87.055,355.898 91.335 C 347.004 97.838,347.931 100.971,358.748 100.971 C 371.266 100.971,396.117 54.032,396.117 30.388 C 396.117 18.792,380.996 28.775,378.791 41.827 C 374.457 67.483,370.139 69.362,364.009 48.259 C 359.878 34.039,356.353 28.814,350.283 27.909 C 342.182 26.702,342.198 26.937,352.198 56.680 M40.593 40.162 C 47.112 44.929,46.346 45.722,31.604 49.464 C 13.124 54.155,7.468 49.972,20.217 41.042 C 30.782 33.642,31.626 33.606,40.593 40.162 M155.227 38.683 C 162.681 43.397,159.123 46.567,142.055 50.416 C 131.447 52.809,128.155 52.314,128.155 48.328 C 128.155 38.255,145.039 32.240,155.227 38.683 "
+                                            stroke="none" fill="#F05537" fill-rule="evenodd"></path>
+                                    </g>
+                                </svg><span class="eds-is-hidden-accessible">Eventbrite</span></i></a></div>
+                    <div class="eds-global-header__minor" data-spec="global-header-minor">
+                        <div class="eds-global-header__quick-links" data-spec="global-header-quick-links"><a href=""
+                                class="eds-global-header__quick-link eds-global-header__quick-link--narrow"
+                                data-spec="global-header-quick-link" aria-label="Quick Link"><span
+                                    class="eds-show-down-mn"><i
+                                        class="eds-vector-image eds-icon--small eds-vector-image--grey-700"
+                                        data-spec="icon" data-testid="icon" aria-hidden="true"><i
+                                            class="eds-vector-image eds-icon--small eds-vector-image--ui-700"
+                                            data-spec="icon" data-testid="icon" aria-hidden="true"><svg
+                                                id="grid-chunky_svg__eds-icon--grid-chunky_svg" x="0" y="0"
+                                                viewBox="0 0 24 24" xml:space="preserve">
+                                                <path id="grid-chunky_svg__eds-icon--grid-chunky_base"
+                                                    fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M16 20h4v-4h-4v4zm0-6h4v-4h-4v4zm-6-6h4V4h-4v4zm6-4v4h4V4h-4zm-6 10h4v-4h-4v4zm-6 0h4v-4H4v4zm0 6h4v-4H4v4zm6 0h4v-4h-4v4zM4 8h4V4H4v4z">
+                                                </path>
+                                            </svg></i></i></span><span class="eds-show-up-md"><svg
+                                        id="grid-chunky_svg__eds-icon--grid-chunky_svg" x="0" y="0" viewBox="0 0 24 24"
+                                        xml:space="preserve">
+                                        <path id="grid-chunky_svg__eds-icon--grid-chunky_base" fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M16 20h4v-4h-4v4zm0-6h4v-4h-4v4zm-6-6h4V4h-4v4zm6-4v4h4V4h-4zm-6 10h4v-4h-4v4zm-6 0h4v-4H4v4zm0 6h4v-4H4v4zm6 0h4v-4h-4v4zM4 8h4V4H4v4z">
+                                        </path>
+                                    </svg></span></a></div>
+                        <div class="eds-global-header__menus eds-show-up-md" data-spec="global-header-menus">
+                            <div class="eds-global-header__user-menu eds-global-header__menu">
+                                <div tabindex="-1">
+                                    <div data-spec="global-header-user-menu" role="menubar" tabindex="-1"
+                                        class="eds-dropdown-menu"><a
+                                            class="eds-dropdown-menu__link ignore-react-onclickoutside" href="#"
+                                            data-spec="dropdown-menu-link" role="menuitem" tabindex="0"
+                                            aria-label="Menu dropdown link">
+                                            <div class="eds-dropdown-menu__contents" data-spec="dropdown-menu-contents">
+                                                <svg class="eds-avatar__background eds-bg-color--control" height="32"
+                                                    width="32" data-spec="spec-avatar"><text x="16" y="19.2"
+                                                        font-size="9.6" font-weight="600" text-anchor="middle"
+                                                        fill="#FFFFFF">TQ</text></svg><span
+                                                    class="eds-global-header__menu-label"
+                                                    data-spec="global-header-menu-label">The Queen</span>
+                                            </div><span
+                                                class="eds-dropdown-menu__icon eds-dropdown-menu__icon--narrow-breakpoints"><i
+                                                    class="eds-vector-image eds-icon--small eds-vector-image--grey-400 eds-vector-image--block"
+                                                    data-spec="icon" data-testid="icon" aria-hidden="true"><svg
+                                                        id="chevron-down-chunky_svg__eds-icon--chevron-down-chunky_svg"
+                                                        x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+                                                        <path
+                                                            id="chevron-down-chunky_svg__eds-icon--chevron-down-chunky_base"
+                                                            fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M7 10.2l5 5 5-5-1.4-1.4-3.6 3.6-3.6-3.6z"></path>
+                                                    </svg></i></span>
+                                        </a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="eds-global-header__user-menu eds-global-header__menu">
+                            <div tabindex="-1">
+                                <div data-spec="global-header-user-menu-narrow" role="menubar" tabindex="-1"
+                                    class="eds-dropdown-menu eds-show-down-mn"><a
+                                        class="eds-dropdown-menu__link ignore-react-onclickoutside" href="#"
+                                        data-spec="dropdown-menu-link" role="menuitem" tabindex="0"
+                                        aria-label="Menu dropdown link">
+                                        <div class="eds-dropdown-menu__contents" data-spec="dropdown-menu-contents"><svg
+                                                class="eds-avatar__background eds-bg-color--control" height="32"
+                                                width="32" data-spec="spec-avatar"><text x="16" y="19.2" font-size="9.6"
+                                                    font-weight="600" text-anchor="middle"
+                                                    fill="#FFFFFF">TQ</text></svg></div><span
+                                            class="eds-dropdown-menu__icon eds-dropdown-menu__icon--narrow-breakpoints"><i
+                                                class="eds-vector-image eds-icon--small eds-vector-image--grey-400 eds-vector-image--block"
+                                                data-spec="icon" data-testid="icon" aria-hidden="true"><svg
+                                                    id="chevron-down-chunky_svg__eds-icon--chevron-down-chunky_svg"
+                                                    x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+                                                    <path
+                                                        id="chevron-down-chunky_svg__eds-icon--chevron-down-chunky_base"
+                                                        fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M7 10.2l5 5 5-5-1.4-1.4-3.6 3.6-3.6-3.6z"></path>
+                                                </svg></i></span>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div><span id="skip-heading" class="eds-is-hidden-accessible">Page Content</span>
+            </header>
+        </div>
+        <div class="creator-workspace-layout events-workspace creator-workspace-layout-without-header"
+            data-testid="creator-workspace-layout">
+            <div data-testid="creator-workspace-main" class="creator-workspace--no-tabs">
+                <div
+                    class="eds-structure eds-structure--min-height eds-structure--independent-scrolling hide-hamburger">
+                    <div class="eds-structure__body">
+                        <div class="eds-structure__main-mask" data-spec="eds-structure-main-mask">
+                            <div class="event-level-container">
+                                <div id="root-event-sidenav-standalone"></div>
+                                <div id="root">
+                                    <div>
+                                        <div class="checkout-settings-modal__container"></div>
+                                        <div class="eds-structure eds-structure--min-height eds-structure--independent-scrolling eds-structure--restricted-width"
+                                            data-spec="eds-structure">
+                                            <div class="eds-structure__header"></div>
+                                            <div class="eds-structure__body eds-structure__body--overflow-set">
+                                                <section class="eds-structure__drawer eds-structure__right-drawer"
+                                                    data-spec="eds-structure-drawer-right">
+                                                    <div class="eds-structure__drawer-content"></div>
+                                                </section>
+                                                <div class="eds-structure__main-mask eds-structure__main-mask--overflow-set"
+                                                    data-spec="eds-structure-main-mask">
+                                                    <div
+                                                        class="eds-structure__fixed-bottom-bar-layout-wrapper eds-structure__fixed-bottom-bar-layout-wrapper--absolute">
+                                                        <div class="eds-fixed-bottom-bar-layout eds-fixed-bottom-bar-layout--absolute"
+                                                            data-spec="fixed-bottom-bar-layout">
+                                                            <div class="eds-fixed-bottom-bar-layout__content">
+                                                                <div class="eds-structure__main-container">
+                                                                    <div
+                                                                        class="eds-structure__title-container eds-g-group">
+                                                                        <div class="eds-structure__title"
+                                                                            data-spec="eds-structure-title">
+                                                                            <div class="eds-l-mar-vert-2 eds-l-mar-left-2 eds-structure__title__toggle"
+                                                                                data-spec="eds-structure-sidebar-toggle">
+                                                                                <span
+                                                                                    class="eds-icon-button eds-icon-button--neutral"
+                                                                                    data-spec="icon-button"><button
+                                                                                        class="eds-btn--button eds-btn--none eds-btn--icon-only"
+                                                                                        type="button"><i
+                                                                                            class="eds-vector-image eds-icon--small eds-vector-image--block"
+                                                                                            title="" data-spec="icon"
+                                                                                            data-testid="icon"><svg
+                                                                                                id="menu-chunky_svg__eds-icon--menu-chunky_svg"
+                                                                                                x="0" y="0"
+                                                                                                viewBox="0 0 24 24"
+                                                                                                xml:space="preserve">
+                                                                                                <path
+                                                                                                    id="menu-chunky_svg__eds-icon--menu-chunky_bottom"
+                                                                                                    fill-rule="evenodd"
+                                                                                                    clip-rule="evenodd"
+                                                                                                    d="M4 17h16v2H4v-2z">
+                                                                                                </path>
+                                                                                                <path
+                                                                                                    id="menu-chunky_svg__eds-icon--menu-chunky_middle"
+                                                                                                    fill-rule="evenodd"
+                                                                                                    clip-rule="evenodd"
+                                                                                                    d="M4 11h16v2H4z">
+                                                                                                </path>
+                                                                                                <path
+                                                                                                    id="menu-chunky_svg__eds-icon--menu-chunky_top"
+                                                                                                    fill-rule="evenodd"
+                                                                                                    clip-rule="evenodd"
+                                                                                                    d="M4 5h16v2H4z">
+                                                                                                </path>
+                                                                                            </svg><span
+                                                                                                class="eds-is-hidden-accessible">Toggle
+                                                                                                Navigation</span></i></button></span>
+                                                                            </div>
+                                                                            <div
+                                                                                class="eds-g-cell eds-l-mar-vert-2 eds-l-mar-left-1 eds-structure__title__heading">
+                                                                                <h2 class="eds-structure__title__heading__text"
+                                                                                    data-spec="eds-structure-title-heading">
+                                                                                    <span>Basic Info</span>
+                                                                                </h2>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <main class="eds-structure__main"
+                                                                        data-spec="eds-structure-main">
+                                                                        <section
+                                                                            class="eds-layout eds-layout--has-horizontal-gutters"
+                                                                            data-spec="eds-layout">
+                                                                            <div class="eds-layout__body"
+                                                                                data-spec="eds-layout__body">
+                                                                                <div>
+                                                                                    <div class="eds-l-pad-top-4"><button
+                                                                                            class="eds-btn--button eds-btn--anchor eds-link"
+                                                                                            type="button">
+                                                                                            <div
+                                                                                                class="eds-align--center">
+                                                                                                <i class="eds-vector-image eds-icon--small eds-vector-image--ui-blue--hover"
+                                                                                                    data-spec="icon"
+                                                                                                    data-testid="icon"
+                                                                                                    aria-hidden="true"><svg
+                                                                                                        id="chevron-left-chunky_svg__eds-icon--chevron-left-chunky_svg"
+                                                                                                        x="0" y="0"
+                                                                                                        viewBox="0 0 24 24"
+                                                                                                        xml:space="preserve">
+                                                                                                        <path
+                                                                                                            id="chevron-left-chunky_svg__eds-icon--chevron-left-chunky_base"
+                                                                                                            fill-rule="evenodd"
+                                                                                                            clip-rule="evenodd"
+                                                                                                            d="M13.8 7l-5 5 5 5 1.4-1.4-3.6-3.6 3.6-3.6z">
+                                                                                                        </path>
+                                                                                                    </svg></i>
+                                                                                                <div
+                                                                                                    class="event-breadcrumb__label">
+                                                                                                    Groups</div>
+                                                                                            </div>
+                                                                                        </button></div>
+                                                                                    <div
+                                                                                        class="eds-g-grid eds-l-pad-bot-12 eds-l-pad-top-5 eds-l-mar-top-5 eds-l-mar-bot-12">
+                                                                                        <form
+                                                                                            data-dashlane-rid="ab3eb77b037c04ae"
+                                                                                            data-form-type="register,step">
+                                                                                            <div
+                                                                                                class="eds-g-group eds-l-mar-bot-8">
+                                                                                                <div
+                                                                                                    class="eds-g-cell eds-vertical-group eds-g-cell-1-12 eds-g-offset-1-12 eds-show-up-md eds-l-pad-top-1">
+                                                                                                    <i class="eds-vector-image eds-icon--medium eds-vector-image--grey-300"
+                                                                                                        data-spec="icon"
+                                                                                                        data-testid="icon"
+                                                                                                        aria-hidden="true"><svg
+                                                                                                            id="title-edit_svg__eds-icon--title-edit_svg"
+                                                                                                            x="0" y="0"
+                                                                                                            viewBox="0 0 24 24"
+                                                                                                            xml:space="preserve">
+                                                                                                            <path
+                                                                                                                id="title-edit_svg__eds-icon--title-edit_base"
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd"
+                                                                                                                d="M2 2v3h1V3h5v10H6v1h5v-1H9V3h5v2h1V2H2z">
+                                                                                                            </path>
+                                                                                                            <g id="title-edit_svg__eds-icon--title-edit_lines"
+                                                                                                                fill-rule="evenodd"
+                                                                                                                clip-rule="evenodd">
+                                                                                                                <path
+                                                                                                                    d="M15 9h7v1h-7zM15 13h7v1h-7zM6 17h16v1H6zM6 21h16v1H6z">
+                                                                                                                </path>
+                                                                                                            </g>
+                                                                                                        </svg></i>
+                                                                                                </div>
+                                                                                                <div
+                                                                                                    class="eds-g-cell eds-vertical-group eds-g-cell-12-12 eds-g-cell-sw-10-12 eds-g-cell-lw-9-12 eds-g-cell-lg-8-12 eds-g-cell-ln-8-12 eds-g-cell-md-8-12 eds-g-offset-sw-1-12 eds-g-offset-md-0-12 eds-g-cell--has-overflow">
+                                                                                                    <div>
+                                                                                                        <h1
+                                                                                                            class="eds-text-hm eds-text-color--grey-900">
+                                                                                                            Basic Info
+                                                                                                        </h1>
+                                                                                                        <div
+                                                                                                            class="eds-g-cell eds-g-cell-1-1 eds-g-cell-lw-9-12 eds-g-cell-lg-9-12 eds-g-cell-ln-9-12 eds-g-cell-mw-9-12 eds-g-cell-md-1-1 eds-g-cell-mn-9-12 eds-g-cell-sw-9-12">
+                                                                                                            <p
+                                                                                                                class="eds-text-bm eds-text-color--grey-800">
+                                                                                                                <span>Name
+                                                                                                                    your
+                                                                                                                    group
+                                                                                                                    and
+                                                                                                                    tell
+                                                                                                                    members
+                                                                                                                    why
+                                                                                                                    they
+                                                                                                                    should
+                                                                                                                    join.
+                                                                                                                    Add
+                                                                                                                    details
+                                                                                                                    that
+                                                                                                                    highlight
+                                                                                                                    what
+                                                                                                                    makes
+                                                                                                                    it
+                                                                                                                    unique.</span>
+                                                                                                            </p>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div
+                                                                                                        class="eds-l-mar-top-4">
+                                                                                                        <div class="eds-field-styled eds-field-styled--static"
+                                                                                                            style="margin-bottom: 12px;">
+                                                                                                            <div
+                                                                                                                class="eds-field-styled__border-simulation">
+                                                                                                                <div
+                                                                                                                    class="eds-field-styled__internal">
+                                                                                                                    <div class="eds-field-styled__input-container"
+                                                                                                                        data-val="Be clear and descriptive.">
+                                                                                                                        <div
+                                                                                                                            class="eds-field-styled__label-wrapper">
+                                                                                                                            <label
+                                                                                                                                class="eds-field-styled__label eds-label-primary eds-field-styled__label--required"
+                                                                                                                                id="event-basicInfo-title-label"
+                                                                                                                                for="event-basicInfo-title"
+                                                                                                                                data-spec="label-label"><span
+                                                                                                                                    class="eds-label__content">Group
+                                                                                                                                    Name</span><span
+                                                                                                                                    class="eds-label__required-indicator eds-text-bs"
+                                                                                                                                    data-spec="required-indicator"><span>
+                                                                                                                                        *</span><span
+                                                                                                                                        class="eds-is-hidden-accessible">(required)</span></span></label>
+                                                                                                                        </div>
+                                                                                                                        <input
+                                                                                                                            data-spec="input-field-input-element"
+                                                                                                                            aria-invalid="false"
+                                                                                                                            aria-required="true"
+                                                                                                                            class="eds-field-styled__input"
+                                                                                                                            data-automation="coyote-basicinfo-event-title"
+                                                                                                                            id="event-basicInfo-title"
+                                                                                                                            maxlength="75"
+                                                                                                                            name="title"
+                                                                                                                            placeholder="Be clear and brief."
+                                                                                                                            type="text"
+                                                                                                                            role="textbox"
+                                                                                                                            value=""
+                                                                                                                            data-dashlane-rid="2145e31858b43423"
+                                                                                                                            data-form-type="title,job"
+                                                                                                                            data-kwimpalastatus="alive"
+                                                                                                                            data-kwimpalaid="1652542521520-0">
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <fieldset
+                                                                                                        class="eds-l-mar-top-8">
+                                                                                                        <div
+                                                                                                            class="eds-g-cell eds-g-cell-1-1 eds-g-cell-mn-4-12 eds-l-mn-pad-right-2 eds-l-md-pad-right-2 eds-l-mw-pad-right-2 eds-l-ln-pad-right-2 eds-l-lg-pad-right-2 eds-l-lw-pad-right-2">
+                                                                                                            <div class="eds-field-styled eds-field-styled--basic"
+                                                                                                                data-automation="coyote-basicinfo-event-type-wrapper"
+                                                                                                                data-spec="coyote-basicinfo-event-type"
+                                                                                                                style="margin-bottom: 16px;">
+                                                                                                                <div
+                                                                                                                    class="eds-field-styled__border-simulation">
+                                                                                                                    <div
+                                                                                                                        class="eds-field-styled__internal">
+                                                                                                                        <div
+                                                                                                                            class="eds-field-styled__input-container">
+                                                                                                                            <div
+                                                                                                                                class="eds-field-styled__label-wrapper">
+                                                                                                                                <label
+                                                                                                                                    class="eds-field-styled__label eds-is-hidden-accessible"
+                                                                                                                                    id="groupTopic-label"
+                                                                                                                                    for="groupTopic"
+                                                                                                                                    data-spec="label-label"><span
+                                                                                                                                        class="eds-label__content"></span></label>
+                                                                                                                            </div>
+                                                                                                                            <div
+                                                                                                                                class="eds-field-styled__select-wrapper">
+                                                                                                                                <span
+                                                                                                                                    class="eds-field-styled__select-value"
+                                                                                                                                    aria-hidden="true"><span
+                                                                                                                                        class="eds-field-styled__select-value-text">Topic</span><span
+                                                                                                                                        class="eds-field-styled__select-icon"><i
+                                                                                                                                            class="eds-vector-image eds-icon--small"
+                                                                                                                                            data-spec="icon"
+                                                                                                                                            data-testid="icon"
+                                                                                                                                            aria-hidden="true"><svg
+                                                                                                                                                id="chevron-down-chunky_svg__eds-icon--chevron-down-chunky_svg-eventType"
+                                                                                                                                                x="0"
+                                                                                                                                                y="0"
+                                                                                                                                                viewBox="0 0 24 24"
+                                                                                                                                                xml:space="preserve">
+                                                                                                                                                <path
+                                                                                                                                                    id="chevron-down-chunky_svg__eds-icon--chevron-down-chunky_base"
+                                                                                                                                                    fill-rule="evenodd"
+                                                                                                                                                    clip-rule="evenodd"
+                                                                                                                                                    d="M7 10.2l5 5 5-5-1.4-1.4-3.6 3.6-3.6-3.6z">
+                                                                                                                                                </path>
+                                                                                                                                            </svg></i></span></span><select
+                                                                                                                                    aria-invalid="false"
+                                                                                                                                    aria-labelledby="eventType-label"
+                                                                                                                                    class="eds-field-styled__input eds-field-styled__select"
+                                                                                                                                    data-automation="coyote-basicinfo-event-type"
+                                                                                                                                    role="listbox"
+                                                                                                                                    id="groupTopic"
+                                                                                                                                    name="groupTopic">
+                                                                                                                                    <option
+                                                                                                                                        value=""
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Topic
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Business"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Business
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Health &amp; Wellbeing"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Health
+                                                                                                                                        &amp;
+                                                                                                                                        Wellbeing
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Politics"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Politics
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Social"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Social
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Family"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Family
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Outdoors"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Outdoors
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Community"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Community
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Music"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Music
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Fitness"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Fitness
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Technology"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Technology
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Writing"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Writing
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Games"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Games
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Beliefs"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Beliefs
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Dancing"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Dancing
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Hobbies"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Hobbies
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Culture"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Culture
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Support"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Support
+                                                                                                                                    </option>
+                                                                                                                                    <option
+                                                                                                                                        value="Other"
+                                                                                                                                        data-spec="select-option">
+                                                                                                                                        Other
+                                                                                                                                    </option>
+                                                                                                                                </select>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                            class="eds-l-mar-top-4">
+                                                                                                            <div class="eds-field-styled eds-field-styled--static"
+                                                                                                                style="margin-bottom: 12px;">
+                                                                                                                <div
+                                                                                                                    class="eds-field-styled__border-simulation">
+                                                                                                                    <div
+                                                                                                                        class="eds-field-styled__internal">
+                                                                                                                        <div class="eds-field-styled__input-container"
+                                                                                                                            data-val="Be clear and descriptive.">
+                                                                                                                            <div
+                                                                                                                                class="eds-field-styled__label-wrapper">
+                                                                                                                                <label
+                                                                                                                                    class="eds-field-styled__label eds-label-primary eds-field-styled__label--required"
+                                                                                                                                    id="event-basicInfo-title-label"
+                                                                                                                                    for="event-basicInfo-title"
+                                                                                                                                    data-spec="label-label"><span
+                                                                                                                                        class="eds-label__content">Group
+                                                                                                                                        Description</span><span
+                                                                                                                                        class="eds-label__required-indicator eds-text-bs"
+                                                                                                                                        data-spec="required-indicator"></label>
+                                                                                                                            </div>
+                                                                                                                            <input
+                                                                                                                                data-spec="input-field-input-element"
+                                                                                                                                aria-invalid="false"
+                                                                                                                                aria-required="true"
+                                                                                                                                class="eds-field-styled__input"
+                                                                                                                                data-automation="coyote-basicinfo-event-title"
+                                                                                                                                id="event-basicInfo-title"
+                                                                                                                                name="title"
+                                                                                                                                placeholder="Describe your"
+                                                                                                                                type="text"
+                                                                                                                                role="textbox"
+                                                                                                                                value=""
+                                                                                                                                data-dashlane-rid="2145e31858b43423"
+                                                                                                                                data-form-type="title,job"
+                                                                                                                                data-kwimpalastatus="alive"
+                                                                                                                                data-kwimpalaid="1652542521520-0">
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </fieldset>
+                                                                                                    <div
+                                                                                                        style="margin-bottom: 20px;">
+                                                                                                        <div class="">
+                                                                                                            <input
+                                                                                                                type="hidden"
+                                                                                                                value="USD">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <hr class="eds-divider__hr eds-bg-color--ui-200 eds-divider--horizontal"
+                                                                                        data-spec="divider-hr"
+                                                                                        aria-hidden="true">
+                                                                                    <div
+                                                                                        class="eds-l-mar-top-10 eds-g-group eds-l-mar-bot-8">
+                                                                                        <div
+                                                                                            class="eds-g-cell eds-vertical-group eds-g-cell-1-12 eds-g-offset-1-12 eds-show-up-md eds-l-pad-top-1">
+                                                                                            <i class="eds-vector-image eds-icon--medium eds-vector-image--grey-300"
+                                                                                                data-spec="icon"
+                                                                                                data-testid="icon"
+                                                                                                aria-hidden="true"><svg
+                                                                                                    id="map_svg__eds-icon--map_svg"
+                                                                                                    x="0" y="0"
+                                                                                                    viewBox="0 0 24 24"
+                                                                                                    xml:space="preserve">
+                                                                                                    <path
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M20 3c-1.1 0-2 .9-2 2H2v16h17.8c1.1 0 2.1-.9 2.1-2V5c.1-1.1-.8-2-1.9-2zm-.2 17H3V6h15v13h1c0-.6.4-1 1-1 .5 0 .9.4 1 .9-.1.6-.6 1.1-1.2 1.1zm1.2-2.7c-.3-.2-.6-.3-1-.3s-.7.1-1 .3V5c0-.6.4-1 1-1s1 .4 1 1v12.3z">
+                                                                                                    </path>
+                                                                                                    <path
+                                                                                                        id="map_svg__eds-icon--map_cross"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M8.8 12.7l.7-.7-1.1-1 1.1-1-.7-.7-1.1 1-1-1-.7.7 1 1-1 1 .7.7 1-1z">
+                                                                                                    </path>
+                                                                                                    <path
+                                                                                                        id="map_svg__eds-icon--map_dash_3_"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M12 10h2v1h-2z">
+                                                                                                    </path>
+                                                                                                    <path
+                                                                                                        id="map_svg__eds-icon--map_dash_2_"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M15 12h1v2h-1z">
+                                                                                                    </path>
+                                                                                                    <path
+                                                                                                        id="map_svg__eds-icon--map_dash_1_"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M12 15h2v1h-2z">
+                                                                                                    </path>
+                                                                                                    <path
+                                                                                                        id="map_svg__eds-icon--map_dash"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M8 15h2v1H8z">
+                                                                                                    </path>
+                                                                                                </svg></i>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="eds-g-cell eds-vertical-group eds-g-cell-12-12 eds-g-cell-sw-10-12 eds-g-cell-lw-9-12 eds-g-cell-lg-8-12 eds-g-cell-ln-8-12 eds-g-cell-md-8-12 eds-g-offset-sw-1-12 eds-g-offset-md-0-12 eds-g-cell--has-overflow">
+                                                                                            <div>
+                                                                                                <h1
+                                                                                                    class="eds-text-hm eds-text-color--grey-900">
+                                                                                                    Location
+                                                                                                </h1>
+                                                                                            </div>
+                                                                                            <div
+                                                                                                class="eds-l-mar-top-5">
+                                                                                                <input type="hidden"
+                                                                                                    value="">
+                                                                                                <div class="eds-g-grid">
+                                                                                                    <div
+                                                                                                        class="eds-g-group">
+                                                                                                        <div data-spec="coyote-basicinfo-location-event-picker"
+                                                                                                            class="eds-g-cell eds-g-cell-1-1 eds-g-cell-md-8-12 eds-g-cell--has-overflow">
+                                                                                                            <div class="radio-selector eds-l-mar-bot-5"
+                                                                                                                role="radiogroup"
+                                                                                                                data-spec="radio-selector">
+                                                                                                                <div class="radio-selector-label-wrap eds-l-mar-right-4"
+                                                                                                                    data-spec="radio-selector-item-padding">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="eds-g-cell eds-g-cell-1-1 eds-g-cell--has-overflow"
+                                                                                                            data-spec="coyote-basicinfo-location-autocomplete">
+                                                                                                            <p
+                                                                                                                class="eds-l-mar-bot-2 eds-text-weight--heavy">
+                                                                                                                location
+                                                                                                            </p>
+                                                                                                            <div
+                                                                                                                class="autocomplete-address-field">
+                                                                                                                <div
+                                                                                                                    style="margin-bottom: 20px;">
+                                                                                                                    <div
+                                                                                                                        class="">
+                                                                                                                        <div
+                                                                                                                            tabindex="-1">
+                                                                                                                            <div class="eds-autocomplete-field"
+                                                                                                                                data-testid="autocomplete-field-wrapper">
+                                                                                                                                <div
+                                                                                                                                    class="eds-autocomplete-field__dropdown-holder">
+                                                                                                                                    <div class="eds-field-styled eds-field-styled--basic"
+                                                                                                                                        data-automation="input-field-wrapper"
+                                                                                                                                        data-testid="input-field-wrapper"
+                                                                                                                                        data-spec="input-field"
+                                                                                                                                        style="margin-bottom: 8px;">
+                                                                                                                                        <div
+                                                                                                                                            class="eds-field-styled__border-simulation">
+                                                                                                                                            <div
+                                                                                                                                                class="eds-field-styled__internal">
+                                                                                                                                                <span
+                                                                                                                                                    class="eds-field-styled__aside eds-field-styled__aside-prefix eds-field-styled__aside--icon"><i
+                                                                                                                                                        class="eds-vector-image eds-icon--small eds-vector-image--grey-600 eds-vector-image--block"
+                                                                                                                                                        data-spec="icon"
+                                                                                                                                                        data-testid="icon"
+                                                                                                                                                        aria-hidden="true"><svg
+                                                                                                                                                            id="magnifying-glass-chunky_svg__eds-icon--magnifying-glass-chunky_svg"
+                                                                                                                                                            x="0"
+                                                                                                                                                            y="0"
+                                                                                                                                                            viewBox="0 0 24 24"
+                                                                                                                                                            xml:space="preserve">
+                                                                                                                                                            <path
+                                                                                                                                                                id="magnifying-glass-chunky_svg__eds-icon--magnifying-glass-chunky_base"
+                                                                                                                                                                fill-rule="evenodd"
+                                                                                                                                                                clip-rule="evenodd"
+                                                                                                                                                                d="M10 14c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm3.5.9c-1 .7-2.2 1.1-3.5 1.1-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 1.3-.4 2.5-1.1 3.4l5.1 5.1-1.5 1.5-5-5.1z">
+                                                                                                                                                            </path>
+                                                                                                                                                        </svg></i></span>
+                                                                                                                                                <div class="eds-field-styled__input-container"
+                                                                                                                                                    data-val="Search for a venue or address.">
+                                                                                                                                                    <div
+                                                                                                                                                        class="eds-field-styled__label-wrapper">
+                                                                                                                                                        <label
+                                                                                                                                                            class="eds-field-styled__label eds-is-hidden-accessible"
+                                                                                                                                                            id="event-locationautocomplete-location-label"
+                                                                                                                                                            for="event-locationautocomplete-location"
+                                                                                                                                                            data-spec="label-label"><span
+                                                                                                                                                                class="eds-label__content"></span></label>
+                                                                                                                                                    </div>
+                                                                                                                                                    <input
+                                                                                                                                                        data-spec="input-field-input-element"
+                                                                                                                                                        aria-invalid="false"
+                                                                                                                                                        class="eds-field-styled__input"
+                                                                                                                                                        id="event-locationautocomplete-location"
+                                                                                                                                                        name="venue"
+                                                                                                                                                        placeholder="Search for a venue or address."
+                                                                                                                                                        type="text"
+                                                                                                                                                        role="combobox"
+                                                                                                                                                        aria-expanded="false"
+                                                                                                                                                        aria-autocomplete="list"
+                                                                                                                                                        aria-owns="event-locationautocomplete-location-listbox"
+                                                                                                                                                        autocomplete="off"
+                                                                                                                                                        tabindex="0"
+                                                                                                                                                        value="">
+                                                                                                                                                </div>
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                                <div>
+                                                                                                                                    <img
+                                                                                                                                        id="myimg">
+                                                                                                                                    <br><br>
+                                                                                                                                </div>
+                                                                                                                                <button
+                                                                                                                                    id="select"
+                                                                                                                                    type="button"
+                                                                                                                                    class="eds-btn eds-btn--button eds-btn--neutral eds-btn--responsive">Select</button>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div><input
+                                                                                                    type="hidden"
+                                                                                                    value="0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <hr class="eds-divider__hr eds-bg-color--ui-200 eds-divider--horizontal"
+                                                                                        data-spec="divider-hr"
+                                                                                        aria-hidden="true">
+                                                                                    <div
+                                                                                        class="eds-l-mar-top-10 eds-g-group eds-l-mar-bot-8">
+                                                                                        <div
+                                                                                            class="eds-g-cell eds-vertical-group eds-g-cell-1-12 eds-g-offset-1-12 eds-show-up-md eds-l-pad-top-1">
+                                                                                            <i class="eds-vector-image eds-icon--medium eds-vector-image--grey-300"
+                                                                                                data-spec="icon"
+                                                                                                data-testid="icon"
+                                                                                                aria-hidden="true"><svg
+                                                                                                    id="calendar_svg__eds-icon--calendar_svg"
+                                                                                                    x="0" y="0"
+                                                                                                    viewBox="0 0 24 24"
+                                                                                                    xml:space="preserve">
+                                                                                                    <path
+                                                                                                        id="calendar_svg__eds-icon--calendar_base"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd"
+                                                                                                        d="M17 4V2h-1v2H8V2H7v2H2v18h20V4h-5zm4 17H3V9h18v12zM3 8V5h4v1h1V5h8v1h1V5h4v3H3z">
+                                                                                                    </path>
+                                                                                                    <g id="calendar_svg__eds-icon--calendar_squares"
+                                                                                                        fill-rule="evenodd"
+                                                                                                        clip-rule="evenodd">
+                                                                                                        <path
+                                                                                                            d="M15 16h2v2h-2zM11 16h2v2h-2zM7 16h2v2H7zM15 12h2v2h-2zM11 12h2v2h-2zM7 12h2v2H7z">
+                                                                                                        </path>
+                                                                                                    </g>
+                                                                                                </svg></i>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                        </section>
+                                                                    </main>
+                                                                </div>
+                                                            </div>
+                                                            <div class="eds-fixed-bottom-bar-layout__bar">
+                                                                <div class="eds-g-grid eds-l-pad-vert-4 coyote-action-bar"
+                                                                    data-automation="coyote-action-bar"
+                                                                    data-automation-visible="false"
+                                                                    data-spec="event-action-bar">
+                                                                    <div
+                                                                        class="eds-text--right eds-g-cell eds-g-cell-12-12 eds-g-cell-sw-10-12 eds-g-cell-lw-10-12 eds-g-cell-md-9-12 event-page-action-bar">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="82beb4ccc30411eca0f217cea8dc900a">
+    </div>
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P8FXJ" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=860573327346891&amp;ev=PageView&amp;noscript=1"></noscript>
+
+    <script type="module" src="script.js"></script>
 
 </body>
 
