@@ -9792,7 +9792,6 @@ _:-ms-input-placeholder {
   top: 0;
   left: 0;
   opacity: 0;
-  overflow: hidden;
   -webkit-appearance: menulist-button;
 }
 .eds-field-styled--disabled .eds-field-styled__select {
