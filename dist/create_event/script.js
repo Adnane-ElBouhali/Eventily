@@ -34,8 +34,7 @@ saveBtn.addEventListener('click', (e) => {
   var Name = "Images/" + eventID + ".png";
   uploadBytes(sref(storage, Name), files[0]).then((snapshot) => {
     console.log('Uploaded a file!');
-  });
-  getDownloadURL(sref(storage, Name))
+    getDownloadURL(sref(storage, Name))
     .then((url) => {
       console.log(typeof url);
       set(ref(database, u.uid + '/events-created/' + eventID), {
@@ -89,6 +88,7 @@ saveBtn.addEventListener('click', (e) => {
       // Handle any error
       console.log(error.message)
     });
+  });
 
     
 })
