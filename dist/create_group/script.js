@@ -13,7 +13,6 @@ function uuid() {
 
 var groupID=uuid();
 
-
 const saveBtn = document.querySelector("#E2");
 var files = [];
 var reader = new FileReader();
