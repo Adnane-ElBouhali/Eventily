@@ -1,30 +1,30 @@
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 
 import { auth, database, storage } from "./index.js";
-import { onValue, child, get, ref, push} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+import { onValue, ref, query } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
 import { getDownloadURL, ref as sref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js'
 
 onAuthStateChanged(auth, user => {
-    if (user != null) {
-        document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;
-        const email = user.email;
-        document.getElementById("user-email").innerHTML = email;
+  if (user != null) {
+    document.getElementById("global-header").innerHTML = document.getElementById("header-after-login").innerHTML;
+    const email = user.email;
+    document.getElementById("user-email").innerHTML = email;
 
-        const LogOutBtn = document.querySelector("#P1");
+    const LogOutBtn = document.querySelector("#P1");
 
-        LogOutBtn.addEventListener('click', () => {
+    LogOutBtn.addEventListener('click', () => {
 
-            signOut(auth)
-                .then(() => {
-                    //console.log("The user is signed out");
-                })
-                .catch((err) => {
-                    console.log(err.message)
-                })
+      signOut(auth)
+        .then(() => {
+          //console.log("The user is signed out");
         })
-    } else {
-        document.getElementById("global-header").innerHTML = document.getElementById("header-before-login").innerHTML;
-    }
+        .catch((err) => {
+          console.log(err.message)
+        })
+    })
+  } else {
+    document.getElementById("global-header").innerHTML = document.getElementById("header-before-login").innerHTML;
+  }
 })
 
 //M=[]
@@ -42,31 +42,89 @@ onAuthStateChanged(auth, user => {
 // let key = ref(database, 'events/').push().getKey();
 // console.log(key);
 
-const starCountRef = ref(database, 'events/' + '561f894f-8fa8-4a5b-9bcb-1708db9d65f3/' );
-onValue(starCountRef, (snapshot) => {
-  const data = snapshot.val();
-  var L = []
-  for(let i in data){
-    L.push(data[i])
+
+
+var whosgonnatelluurnotpretty = ref(database, 'events');
+
+var list_of_event_ids = []
+onValue(whosgonnatelluurnotpretty, (snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    const childKey = childSnapshot.key;
+
+    list_of_event_ids.push(childKey)
+    // var P = []
+    // for (let i in childKey) {
+    //   P.push(childKey[i])
+    // }
+    // console.log(P)
+  });
+  //console.log(list_of_event_ids)
+
+  for (let j = 1; j < 4; j++) {
+    const starCountRef = ref(database, 'events/' + list_of_event_ids[j]);
+    onValue(starCountRef, (snapshot) => {
+
+      const pathReference = sref(storage, "Images/" + list_of_event_ids[j] + ".png")
+      var event_image = document.getElementById("image" + j.toString())
+      getDownloadURL(pathReference).then((url) => {
+        event_image.setAttribute("src", url);
+      })
+
+      const data = snapshot.val();
+      var L = []
+      for (let i in data) {
+        L.push(data[i])
+      }
+      console.log(L)
+      var eventTitle = L[9];
+      var startDate = L[6] + ', ' + L[7]
+      var location = L[4]
+      // var description = L[0]
+      var price = L[5]
+      var user_uid = L[10]
+      var participants = L[5]
+
+      document.getElementById("event-title" + j.toString()).innerHTML = eventTitle;
+      document.getElementById("date-time" + j.toString()).innerHTML = startDate;
+      document.getElementById("location" + j.toString()).innerHTML = location;
+      document.getElementById("price" + j.toString()).innerHTML = price + " DHS";
+
+
+
+      
+      const organiser = ref(database, user_uid );
+      onValue(organiser, (snapshot) => {
+        var M = []
+        const dataa = snapshot.val();
+        console.log(dataa)
+        for (let i in dataa) {
+          M.push(dataa[i])
+        }
+        console.log(M)
+        const organiser_name = M[2] + ' ' + M[3]
+        document.getElementById("organiser" + j).innerHTML = organiser_name;
+      })
+      document.getElementById("participants" + j).innerHTML = participants + ' participants';
+
+    });
+
+
+
+
   }
-  console.log(L)
-  var eventTitle = L[8];
-  var startDate = L[6] + ', ' + L[7]
-  var location = L[4]
-  var description = L[0]
-  var price = L[5]
-  const organiser = ref(database, 'events/' + organiser_id);
-  const pathReference = sref(storage, 'Images/561f894f-8fa8-4a5b-9bcb-1708db9d65f3.png')
-  var event_image = document.getElementById("image1")
-  getDownloadURL(pathReference).then((url) => {
-    event_image.setAttribute("src", url);
-  })
-  document.getElementById("event-title1").innerHTML = eventTitle;
-  document.getElementById("date-time1").innerHTML = startDate;
-  document.getElementById("location1").innerHTML = location;
-  document.getElementById("free-notfree1").innerHTML = price + " DHS";
-  //document.getElementById("something1").innerHTML = ;
-  
-});
+
+
+
+
+
+})
+
+
+//--------------------------------------------
+
+//---------------------------------------------
+
+
+
 
 
