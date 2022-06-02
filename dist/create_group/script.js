@@ -41,6 +41,7 @@ saveBtn.addEventListener('click', (e) => {
       }).then(() => {
         // Data saved successfully!
         set(ref(database,'groups/' + groupID), {
+          user: u.uid,
           name: group_name,
           topic: group_topic,
           description: group_description,
