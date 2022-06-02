@@ -1,7 +1,7 @@
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 
 import { auth, database, storage } from "./index.js";
-import { onValue, child, get, ref} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+import { onValue, child, get, ref, push} from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
 import { getDownloadURL, ref as sref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js'
 
 onAuthStateChanged(auth, user => {
@@ -27,6 +27,20 @@ onAuthStateChanged(auth, user => {
     }
 })
 
+//M=[]
+
+// for (let i = 1; i < 10; i++) {
+//   M[i] = Math.random()*100;
+
+
+
+// }
+
+
+// firebase.database().ref("events").orderByChild("id").startAt(Math.random).limitToFirst(1);
+
+// let key = ref(database, 'events/').push().getKey();
+// console.log(key);
 
 const starCountRef = ref(database, 'events/' + '561f894f-8fa8-4a5b-9bcb-1708db9d65f3/' );
 onValue(starCountRef, (snapshot) => {
@@ -41,6 +55,7 @@ onValue(starCountRef, (snapshot) => {
   var location = L[4]
   var description = L[0]
   var price = L[5]
+  const organiser = ref(database, 'events/' + organiser_id);
   const pathReference = sref(storage, 'Images/561f894f-8fa8-4a5b-9bcb-1708db9d65f3.png')
   var event_image = document.getElementById("image1")
   getDownloadURL(pathReference).then((url) => {
@@ -50,7 +65,7 @@ onValue(starCountRef, (snapshot) => {
   document.getElementById("date-time1").innerHTML = startDate;
   document.getElementById("location1").innerHTML = location;
   document.getElementById("free-notfree1").innerHTML = price + " DHS";
-  document.getElementById("something1").innerHTML = description;
+  //document.getElementById("something1").innerHTML = ;
   
 });
 
