@@ -14,6 +14,7 @@ onAuthStateChanged(auth, user => {
             signOut(auth)
                 .then(() => {
                     //console.log("The user is signed out");
+                    window.location = "../index.html"
                 })
                 .catch((err) => {
                     console.log(err.message)
