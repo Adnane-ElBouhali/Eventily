@@ -53,6 +53,7 @@ saveBtn.addEventListener('click', (e) => {
       }).then(() => {
         // Data saved successfully!
         set(ref(database, '/events/' + eventID), {
+          user: u.uid,
           title: event_title,
           type: event_type,
           description: event_description,

@@ -41,7 +41,21 @@ saveBtn.addEventListener('click', (e) => {
         image: url,
       }).then(() => {
         // Data saved successfully!
-        window.location="../index.html"
+        set(ref(database,'groups/' + groupID), {
+          name: group_name,
+          topic: group_topic,
+          description: group_description,
+          location: group_location,
+          visibility: group_visibility,
+          image: url,
+        }).then(() => {
+          // Data saved successfully!
+          window.location="../index.html"
+        })
+        .catch((error) => {
+          // The write failed...
+          alert(error);
+        });
       })
       .catch((error) => {
         // The write failed...
