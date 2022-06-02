@@ -1,7 +1,7 @@
 import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
 
 import { auth, database, storage } from "./index.js";
-import { onValue, ref, query } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
+import { onValue, ref } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
 import { getDownloadURL, ref as sref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js'
 
 onAuthStateChanged(auth, user => {
@@ -58,14 +58,14 @@ onValue(whosgonnatelluurnotpretty, (snapshot) => {
     // }
     // console.log(P)
   });
-  //console.log(list_of_event_ids)
+  console.log(list_of_event_ids)
 
-  for (let j = 1; j < 4; j++) {
-    const starCountRef = ref(database, 'events/' + list_of_event_ids[j]);
+  for (let j = 1; j < 5; j++) {
+    const starCountRef = ref(database, 'events/' + list_of_event_ids[j-1]);
     onValue(starCountRef, (snapshot) => {
 
-      const pathReference = sref(storage, "Images/" + list_of_event_ids[j] + ".png")
-      var event_image = document.getElementById("image" + j.toString())
+      const pathReference = sref(storage, "Images/" + list_of_event_ids[j-1] + ".png")
+      var event_image = document.getElementById("image" + j)
       getDownloadURL(pathReference).then((url) => {
         event_image.setAttribute("src", url);
       })
@@ -77,39 +77,33 @@ onValue(whosgonnatelluurnotpretty, (snapshot) => {
       }
       console.log(L)
       var eventTitle = L[9];
-      var startDate = L[6] + ', ' + L[7]
+      var startDate = L[7] + ', ' + L[8]
       var location = L[4]
       // var description = L[0]
-      var price = L[5]
-      var user_uid = L[10]
+      var price = L[6]
+      var user_uid = L[11]
       var participants = L[5]
 
-      document.getElementById("event-title" + j.toString()).innerHTML = eventTitle;
-      document.getElementById("date-time" + j.toString()).innerHTML = startDate;
-      document.getElementById("location" + j.toString()).innerHTML = location;
-      document.getElementById("price" + j.toString()).innerHTML = price + " DHS";
-
-
-
-      
+      document.getElementById("event-title" + j).innerHTML = eventTitle;
+      document.getElementById("date-time" + j).innerHTML = startDate;
+      document.getElementById("location" + j).innerHTML = location;
+      document.getElementById("price" + j).innerHTML = price + " DHS";
+ 
       const organiser = ref(database, user_uid );
       onValue(organiser, (snapshot) => {
         var M = []
         const dataa = snapshot.val();
-        console.log(dataa)
+        //console.log(dataa)
         for (let i in dataa) {
           M.push(dataa[i])
         }
-        console.log(M)
+        //console.log(M)
         const organiser_name = M[2] + ' ' + M[3]
         document.getElementById("organiser" + j).innerHTML = organiser_name;
       })
       document.getElementById("participants" + j).innerHTML = participants + ' participants';
 
     });
-
-
-
 
   }
 
