@@ -1,5 +1,3 @@
-
-
 import { storage, database, auth } from '../index.js';
 import { ref as sref, uploadBytes, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
 import { ref, set } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js';
@@ -18,11 +16,18 @@ const saveBtn = document.querySelector("#E2");
 var files = [];
 var reader = new FileReader();
 
+// for(let i=0; i<15; i++){
+//   console.log(document.getElementsByClassName("eds-field-styled__input")[i])
+// }
+
+
 saveBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const event_title = document.getElementsByClassName("eds-field-styled__input")[0].value;
   const event_type = document.getElementsByClassName("eds-field-styled__input")[1].value;
   const event_description = document.getElementsByClassName("eds-field-styled__input")[2].value;
+  const event_tags = document.getElementsByClassName("eds-field-styled__input")[3].value;
+  // console.log(event_tags)
   const event_location = document.getElementsByClassName("eds-field-styled__input")[4].value;
   const event_start_date = document.getElementsByClassName("eds-field-styled__input")[5].value;
   const event_start_time = document.getElementsByClassName("eds-field-styled__input")[6].value;
@@ -49,6 +54,7 @@ saveBtn.addEventListener('click', (e) => {
         visibility: event_visibility,
         price: event_price,
         image: url,
+        participants: 0
       }).then(() => {
         // Data saved successfully!
         set(ref(database, '/events/' + eventID), {
@@ -64,6 +70,7 @@ saveBtn.addEventListener('click', (e) => {
           visibility: event_visibility,
           price: event_price,
           image: url,
+          participants: 0
         }).then(() => {
           // Data saved successfully!
           window.location = "../index.html"

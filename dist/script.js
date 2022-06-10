@@ -60,7 +60,7 @@ onValue(eventRef, (snapshot) => {
   });
   console.log(list_of_event_ids)
 
-  for (let j = 1; j < 5; j++) {
+  for (let j = 1; j < 7; j++) {
     const starCountRef = ref(database, 'events/' + list_of_event_ids[j-1]);
     onValue(starCountRef, (snapshot) => {
 
