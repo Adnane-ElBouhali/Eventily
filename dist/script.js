@@ -44,10 +44,10 @@ onAuthStateChanged(auth, user => {
 
 
 
-var whosgonnatelluurnotpretty = ref(database, 'events');
+var eventRef = ref(database, 'events');
 
 var list_of_event_ids = []
-onValue(whosgonnatelluurnotpretty, (snapshot) => {
+onValue(eventRef, (snapshot) => {
   snapshot.forEach((childSnapshot) => {
     const childKey = childSnapshot.key;
 
@@ -106,9 +106,6 @@ onValue(whosgonnatelluurnotpretty, (snapshot) => {
     });
 
   }
-
-
-
 
 
 })

@@ -56,14 +56,5 @@ const btn = document.getElementById("C9");
         .catch((err) => {
             console.log(err.message)
         });
-    
-        
-    
+  
     })
-
-   
-
-
-
-    
-       
