@@ -28,8 +28,7 @@ saveBtn.addEventListener('click', (e) => {
   var Name = "Groups/" + groupID + ".png";
   uploadBytes(sref(storage, Name), files[0]).then((snapshot) => {
     console.log('Uploaded a file!');
-  });
-  getDownloadURL(sref(storage, Name))
+    getDownloadURL(sref(storage, Name))
     .then((url) => {
       set(ref(database, u.uid + '/groups-created/' + groupID), {
         name: group_name,
@@ -67,6 +66,8 @@ saveBtn.addEventListener('click', (e) => {
       // Handle any error
       console.log(error.message)
     });
+  });
+  
 })
 
 document.getElementById("select").onclick = function (e) {
