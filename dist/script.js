@@ -100,6 +100,17 @@ onValue(eventRef, (snapshot) => {
         //console.log(M)
         const organiser_name = M[2] + ' ' + M[3]
         document.getElementById("organiser" + j).innerHTML = organiser_name;
+
+        $(".event"+j).click(function() {
+          getDownloadURL(pathReference).then((url) => {
+            document.getElementById("eventImage").setAttribute("src", url);
+          })
+          document.getElementById("event_price").innerHTML = price;
+          document.getElementById("titleEvent").innerHTML = title;
+          document.getElementById("organizer-link-org-panel").innerHTML = organiser_name;
+          window.location = "../profiles/event.html"; 
+          return true;
+        });
       })
       document.getElementById("participants" + j).innerHTML = participants + ' participants';
 

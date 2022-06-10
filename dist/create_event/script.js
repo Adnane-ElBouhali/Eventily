@@ -37,6 +37,7 @@ saveBtn.addEventListener('click', (e) => {
   const event_price = document.getElementsByClassName("eds-field-styled__input")[10].value;
   const u = auth.currentUser;
   var Name = "Images/" + eventID + ".png";
+  
   uploadBytes(sref(storage, Name), files[0]).then((snapshot) => {
     console.log('Uploaded a file!');
     getDownloadURL(sref(storage, Name))
