@@ -16,7 +16,7 @@ logInBtn.addEventListener('click', (e) => {
         window.location = "../index.html";
     })
     .catch((err) => {
-        console.log(err.message)
+        alert(err.message)
     })
 })
 

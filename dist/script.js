@@ -2,7 +2,7 @@ import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 import { auth, database, storage } from "./index.js";
 import { onValue, ref } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
-import { getDownloadURL, ref as sref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js'
+import { getDownloadURL, ref as sref } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-storage.js';
 
 onAuthStateChanged(auth, user => {
   if (user != null) {
@@ -60,7 +60,7 @@ onValue(eventRef, (snapshot) => {
   });
   console.log(list_of_event_ids)
 
-  for (let j = 1; j < 7; j++) {
+  for (let j = 1; j < 9; j++) {
     const starCountRef = ref(database, 'events/' + list_of_event_ids[j-1]);
     onValue(starCountRef, (snapshot) => {
 
@@ -76,16 +76,16 @@ onValue(eventRef, (snapshot) => {
         L.push(data[i])
       }
       console.log(L)
-      var eventTitle = L[9];
-      var startDate = L[7] + ', ' + L[8]
-      var location = L[4]
+      var eventTitle = L[13];
+      var startDateTime = L[10] + ', ' + L[11]
+      var location = L[5]
       // var description = L[0]
-      var price = L[6]
-      var user_uid = L[11]
-      var participants = L[5]
+      var price = L[9]
+      var user_uid = L[0]
+      var number_of_participants = L[7]
 
       document.getElementById("event-title" + j).innerHTML = eventTitle;
-      document.getElementById("date-time" + j).innerHTML = startDate;
+      document.getElementById("date-time" + j).innerHTML = startDateTime;
       document.getElementById("location" + j).innerHTML = location;
       document.getElementById("price" + j).innerHTML = price + " DHS";
  
@@ -101,18 +101,18 @@ onValue(eventRef, (snapshot) => {
         const organiser_name = M[2] + ' ' + M[3]
         document.getElementById("organiser" + j).innerHTML = organiser_name;
 
-        $(".event"+j).click(function() {
-          getDownloadURL(pathReference).then((url) => {
-            document.getElementById("eventImage").setAttribute("src", url);
-          })
-          document.getElementById("event_price").innerHTML = price;
-          document.getElementById("titleEvent").innerHTML = title;
-          document.getElementById("organizer-link-org-panel").innerHTML = organiser_name;
-          window.location = "../profiles/event.html"; 
-          return true;
-        });
+        // $(".event"+j).click(function() {
+        //   getDownloadURL(pathReference).then((url) => {
+        //     document.getElementById("eventImage").setAttribute("src", url);
+        //   })
+        //   document.getElementById("event_price").innerHTML = price;
+        //   document.getElementById("titleEvent").innerHTML = title;
+        //   document.getElementById("organizer-link-org-panel").innerHTML = organiser_name;
+        //   window.location = "../profiles/event.html"; 
+        //   return true;
+        // });
       })
-      document.getElementById("participants" + j).innerHTML = participants + ' participants';
+      document.getElementById("participants" + j).innerHTML = number_of_participants + ' participants';
 
     });
 
@@ -120,13 +120,6 @@ onValue(eventRef, (snapshot) => {
 
 
 })
-
-
-//--------------------------------------------
-
-//---------------------------------------------
-
-
 
 
 

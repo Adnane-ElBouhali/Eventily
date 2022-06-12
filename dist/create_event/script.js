@@ -22,19 +22,21 @@ var reader = new FileReader();
 
 
 saveBtn.addEventListener('click', (e) => {
+  
   e.preventDefault();
   const event_title = document.getElementsByClassName("eds-field-styled__input")[0].value;
   const event_type = document.getElementsByClassName("eds-field-styled__input")[1].value;
   const event_description = document.getElementsByClassName("eds-field-styled__input")[2].value;
-  const event_tags = document.getElementsByClassName("eds-field-styled__input")[3].value;
-  // console.log(event_tags)
-  const event_location = document.getElementsByClassName("eds-field-styled__input")[4].value;
-  const event_start_date = document.getElementsByClassName("eds-field-styled__input")[5].value;
-  const event_start_time = document.getElementsByClassName("eds-field-styled__input")[6].value;
-  const event_end_date = document.getElementsByClassName("eds-field-styled__input")[7].value;
-  const event_end_time = document.getElementsByClassName("eds-field-styled__input")[8].value;
-  const event_visibility = document.getElementsByClassName("eds-field-styled__input")[9].value;
-  const event_price = document.getElementsByClassName("eds-field-styled__input")[10].value;
+  const event_max_participants = document.getElementsByClassName("eds-field-styled__input")[3].value;
+  const event_tags = document.getElementsByClassName("eds-field-styled__input")[4].value;
+  //console.log(event_tags)
+  const event_location = document.getElementsByClassName("eds-field-styled__input")[5].value;
+  const event_start_date = document.getElementsByClassName("eds-field-styled__input")[6].value;
+  const event_start_time = document.getElementsByClassName("eds-field-styled__input")[7].value;
+  const event_end_date = document.getElementsByClassName("eds-field-styled__input")[8].value;
+  const event_end_time = document.getElementsByClassName("eds-field-styled__input")[9].value;
+  const event_visibility = document.getElementsByClassName("eds-field-styled__input")[10].value;
+  const event_price = document.getElementsByClassName("eds-field-styled__input")[11].value;
   const u = auth.currentUser;
   var Name = "Images/" + eventID + ".png";
   
@@ -44,25 +46,16 @@ saveBtn.addEventListener('click', (e) => {
     .then((url) => {
       console.log(typeof url);
       set(ref(database, u.uid + '/events-created/' + eventID), {
-        title: event_title,
-        type: event_type,
-        description: event_description,
-        location: event_location,
-        start_date: event_start_date,
-        start_time: event_start_time,
-        end_date: event_end_date,
-        end_time: event_end_time,
-        visibility: event_visibility,
-        price: event_price,
-        image: url,
-        participants: 0
+        title: event_title
+        
       }).then(() => {
         // Data saved successfully!
         set(ref(database, '/events/' + eventID), {
-          user: u.uid,
+          creator: u.uid,
           title: event_title,
           type: event_type,
           description: event_description,
+          tags: event_tags,
           location: event_location,
           start_date: event_start_date,
           start_time: event_start_time,
@@ -71,10 +64,18 @@ saveBtn.addEventListener('click', (e) => {
           visibility: event_visibility,
           price: event_price,
           image: url,
-          participants: 0
+          number_of_participants: 1,
+          max_number_of_participants: event_max_participants
         }).then(() => {
-          // Data saved successfully!
-          window.location = "../index.html"
+          set(ref(database, '/events/' + eventID + '/participants'), {
+            user: u.uid
+          }).then(() => {
+            // Data saved successfully!
+            window.location = "../index.html"
+          }).catch((error) => {
+            alert(error);
+          })
+          
         })
           .catch((error) => {
             // The write failed...
@@ -115,8 +116,8 @@ document.getElementById("select").onclick = function (e) {
   input.click();
 }
 //document.getElementById ("eventType-label").innerHTML = document.getElementsByClassName("eds-field-styled__input")[1].value;
-var visibility1 = document.getElementById("vis1");
-var visibility2 = document.getElementById("vis2");
+//var visibility1 = document.getElementById("vis1");
+//var visibility2 = document.getElementById("vis2");
 
 // visibility2.onclick = function () {
 //   console.log("hey")
