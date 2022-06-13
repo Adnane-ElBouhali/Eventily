@@ -100,7 +100,7 @@ onValue(eventRef, (snapshot) => {
         for (let i in dataa) {
           M.push(dataa[i])
         }
-        //console.log(M)
+        console.log(M)
         const organiser_name = M[2] + ' ' + M[3]
         document.getElementById("organiser" + j).innerHTML = organiser_name;
 
@@ -123,6 +123,76 @@ onValue(eventRef, (snapshot) => {
 
 
 })
+var groupRef = ref(database, 'groups');
+
+var list_of_group_ids = []
+
+onValue(groupRef, (snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    const childKey = childSnapshot.key;
+    list_of_group_ids.push(childKey)
+  });
+  console.log(list_of_group_ids)
+
+  for (let j = 1; j < 5; j++) {
+    const starCountRef = ref(database, 'groups/' + list_of_group_ids[j - 1]);
+    onValue(starCountRef, (snapshot) => {
+
+      const pathReference = sref(storage, "Groups/" + list_of_group_ids[j - 1] + ".png")
+      var event_image = document.getElementById("gimage" + j)
+      getDownloadURL(pathReference).then((url) => {
+        event_image.setAttribute("src", url);
+      })
+
+      const data = snapshot.val();
+      var L = []
+      for (let i in data) {
+        L.push(data[i])
+      }
+      console.log(L)
+      var groupTitle = L[3]
+      var location = L[2]
+      // var description = L[0]
+      var user_id = L[6]
+      var number_of_followers = L[4]
+
+      if (document.getElementById("group-title" + j) != null && document.getElementById("glocation" + j) != null) {
+        document.getElementById("group-title" + j).innerHTML = groupTitle;
+        document.getElementById("glocation" + j).innerHTML = location;
+      }
+
+
+      const organiser = ref(database, user_id);
+      onValue(organiser, (snapshot) => {
+        var M = []
+        const dataa = snapshot.val();
+        //console.log(dataa)
+        for (let i in dataa) {
+          M.push(dataa[i])
+        }
+        console.log(M)
+        const organiser_name = M[2] + ' ' + M[4]
+        document.getElementById("creator" + j).innerHTML = organiser_name;
+
+        // $(".event"+j).click(function() {
+        //   getDownloadURL(pathReference).then((url) => {
+        //     document.getElementById("eventImage").setAttribute("src", url);
+        //   })
+        //   document.getElementById("event_price").innerHTML = price;
+        //   document.getElementById("titleEvent").innerHTML = title;
+        //   document.getElementById("organizer-link-org-panel").innerHTML = organiser_name;
+        //   window.location = "../profiles/event.html"; 
+        //   return true;
+        // });
+      })
+      document.getElementById("followers" + j).innerHTML = number_of_followers + ' followers';
+
+    });
+
+  }
+
+
+})
 
 window.onload = function () {
   var el1 = document.getElementById("z1");
@@ -133,6 +203,11 @@ window.onload = function () {
   var el6 = document.getElementById("z6");
   var el7 = document.getElementById("z7");
   var el8 = document.getElementById("z8");
+
+  var gr1 = document.getElementById("g1");
+  var gr2 = document.getElementById("g2");
+  var gr3 = document.getElementById("g3");
+  var gr4 = document.getElementById("g4");
 
   el1.onclick = (function () {
     get(child(ref(database), "events")).then((snapshot) => {
@@ -1183,3 +1258,4 @@ window.onload = function () {
   });
 
 }
+
