@@ -49,12 +49,12 @@ const btn = document.getElementById("C9");
                 window.location = "../index.html";
               })
               .catch((error) => {
-                console.log(error.message)
+                alert(error.message)
               });
            
         })
         .catch((err) => {
-            console.log(err.message)
+            alert(err.message)
         });
   
     })

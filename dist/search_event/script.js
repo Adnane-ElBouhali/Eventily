@@ -111,7 +111,7 @@ onValue(eventRef2, (snapshot) => {
         // });
       })
       document.getElementById("participants" + j).innerHTML = number_of_participants + ' participants';
-
+      document.getElementById("participants" + j + "/2").innerHTML = number_of_participants + ' participants';
     });
 
   }
