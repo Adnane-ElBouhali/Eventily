@@ -22,7 +22,7 @@ var reader = new FileReader();
 
 
 saveBtn.addEventListener('click', (e) => {
-  
+
   e.preventDefault();
   const event_title = document.getElementsByClassName("eds-field-styled__input")[0].value;
   const event_type = document.getElementsByClassName("eds-field-styled__input")[1].value;
@@ -39,67 +39,67 @@ saveBtn.addEventListener('click', (e) => {
   const event_price = document.getElementsByClassName("eds-field-styled__input")[11].value;
   const u = auth.currentUser;
   var Name = "Images/" + eventID + ".png";
-  
+
   uploadBytes(sref(storage, Name), files[0]).then((snapshot) => {
     console.log('Uploaded a file!');
     getDownloadURL(sref(storage, Name))
-    .then((url) => {
-      console.log(typeof url);
-      set(ref(database, u.uid + '/events-created/' + eventID), {
-        title: event_title
-        
-      }).then(() => {
-        // Data saved successfully!
-        set(ref(database, '/events/' + eventID), {
-          creator: u.uid,
-          title: event_title,
-          type: event_type,
-          description: event_description,
-          tags: event_tags,
-          location: event_location,
-          start_date: event_start_date,
-          start_time: event_start_time,
-          end_date: event_end_date,
-          end_time: event_end_time,
-          visibility: event_visibility,
-          price: event_price,
-          image: url,
-          number_of_participants: 1,
-          max_number_of_participants: event_max_participants
+      .then((url) => {
+        console.log(typeof url);
+        set(ref(database, u.uid + '/events-created/' + eventID), {
+          title: event_title
+
         }).then(() => {
-          set(ref(database, '/events/' + eventID + '/participants'), {
-            user: u.uid
+          // Data saved successfully!
+          set(ref(database, '/events/' + eventID), {
+            creator: u.uid,
+            title: event_title,
+            type: event_type,
+            description: event_description,
+            tags: event_tags,
+            location: event_location,
+            start_date: event_start_date,
+            start_time: event_start_time,
+            end_date: event_end_date,
+            end_time: event_end_time,
+            visibility: event_visibility,
+            price: event_price,
+            image: url,
+            number_of_participants: 1,
+            max_number_of_participants: event_max_participants
           }).then(() => {
-            // Data saved successfully!
-            window.location = "../index.html"
-          }).catch((error) => {
-            alert(error);
+            set(ref(database, '/events/' + eventID + '/participants/' + u.uid), {
+              user: u.uid
+            }).then(() => {
+              // Data saved successfully!
+              window.location = "../index.html"
+            }).catch((error) => {
+              alert(error);
+            })
+
           })
-          
+            .catch((error) => {
+              // The write failed...
+              alert(error);
+            });
+
+
         })
           .catch((error) => {
             // The write failed...
             alert(error);
           });
 
-        
+
+
+
       })
-        .catch((error) => {
-          // The write failed...
-          alert(error);
-        });
-
-        
-
-
-    })
-    .catch((error) => {
-      // Handle any error
-      console.log(error.message)
-    });
+      .catch((error) => {
+        // Handle any error
+        console.log(error.message)
+      });
   });
 
-    
+
 })
 
 document.getElementById("select").onclick = function (e) {
